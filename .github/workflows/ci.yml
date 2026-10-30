@@ -9,12 +9,16 @@ jobs:
   test:
     runs-on: ubuntu-latest
     strategy:
+      fail-fast: false
       matrix:
-        python-version: ["3.9", "3.10", "3.11", "3.12", "3.13"]
+        # uv downloads any Python version, including 3.9, which the newest
+        # GitHub runner images no longer ship.
+        python-version: ["3.9", "3.10", "3.11", "3.12", "3.13", "3.14"]
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: astral-sh/setup-uv@v6
         with:
           python-version: ${{ matrix.python-version }}
-      - run: pip install -e .
+          activate-environment: true
+      - run: uv pip install -e .
       - run: python -m unittest discover -s tests -v
