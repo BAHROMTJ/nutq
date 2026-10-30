@@ -92,6 +92,14 @@ class ArabicTest(unittest.TestCase):
         self.assertEqual(self.arabic("забони тоҷикӣ"), "زبان تاجیکی")
         self.assertEqual(self.arabic("хонаи калон"), "خانه‌ی کلان")
 
+    def test_comparatives(self):
+        self.assertEqual(self.arabic("ширинтар"), "شیرین\u200cتر")
+        self.assertEqual(self.arabic("калонтарин"), "کلان\u200cترین")
+        self.assertEqual(self.arabic("хубтар"), "خوب\u200cتر")
+        self.assertEqual(self.arabic("бештар"), "بیشتر")
+        self.assertEqual(self.arabic("дафтар"), "دفتر")
+        self.assertEqual(self.arabic("духтар"), "دختر")
+
     def test_verbs(self):
         self.assertEqual(self.arabic("мешавад"), "می‌شود")
         self.assertEqual(self.arabic("намешавам"), "نمی\u200cشوم")

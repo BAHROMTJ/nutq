@@ -56,6 +56,8 @@ _SUFFIXES = (
     ("ҳои", ZWNJ + "های", 2),
     ("ҳо", ZWNJ + "ها", 2),
     ("ро", " را", 3),
+    ("тарин", ZWNJ + "ترین", 3),  # comparative: калонтарин -> کلان‌ترین
+    ("тар", ZWNJ + "تر", 3),      # ширинтар -> شیرین‌تر (дафтар is in the word list)
     ("и", "", 3),  # izafat; not written after a consonant
 )
 
