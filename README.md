@@ -84,7 +84,7 @@ Each language is one folder under `src/nutq/lang/`. It registers a `Language` ob
 
 Some forms are our best guess and still need a native editor to confirm them. Each one is marked `verify` in the source:
 
-- **Tajik:** date reading (`дувоздаҳуми марти соли …`), decimals (`ду бутуну панҷ даҳум`), times (`соати чордаҳу сӣ дақиқа`); the Perso-Arabic word list.
+- **Tajik:** decimals (`ду бутуну панҷ даҳум`) and the Perso-Arabic word list. Dates and times were confirmed by a native speaker.
 - **Persian / Dari:** `ممیز` vs `اعشاریه`, `درصد` vs `فیصد`, Afghan spellings of Gregorian months, `یکم` vs `اول`.
 - **Uzbek:** all forms. Open questions: `yuz` vs `bir yuz`, `ming` vs `bir ming`, time and date reading, and `ts` → `ц` in Latin → Cyrillic.
 
@@ -112,7 +112,7 @@ Python 3.9+ and no dependencies.
 import nutq
 nutq.convert("Забони тоҷикӣ", "tg", to="Arab")   # 'زبان تاجیکی'
 nutq.normalize("Соати 14:30, 15% тахфиф", "tg")
-# 'Соати чордаҳу сӣ дақиқа, понздаҳ фоиз тахфиф'
+# 'Соати чордаҳу сӣ, понздаҳ фоиз тахфиф'
 ```
 
 Ҳар кас метавонад онро бепул истифода барад ва дар рушди он саҳм гузорад. Агар хатое ёбед, масалан калимае, ки бо хати форсӣ нодуруст навишта шудааст, лутфан дар GitHub issue кушоед ё калимаро ба файли `arabic_words.tsv` илова кунед. Ба забондонҳои ӯзбек, қазоқ, туркман, озарӣ, серб ва курд барои илова кардани забонҳои нав ниёз дорем.

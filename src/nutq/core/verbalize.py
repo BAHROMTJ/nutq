@@ -127,7 +127,7 @@ class Verbalizer:
     def _time(self, m: Match) -> str:
         words = self.time(int(m.group(1)), int(m.group(2)))
         # Don't repeat the word "hour" when the text already has it
-        # ("соати 14:30" -> "соати чордаҳу сӣ дақиқа").
+        # ("соати 14:30" -> "соати чордаҳу сӣ").
         before = _LAST_WORD.search(m.string[:m.start()])
         first, _, rest = words.partition(" ")
         if before and rest:

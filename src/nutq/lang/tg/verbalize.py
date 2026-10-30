@@ -60,15 +60,15 @@ def _money(amount: int, cents, code: str) -> str:
 
 
 def _date(day: int, month: int, year: int) -> str:
-    # 12.03.2026 -> "дувоздаҳуми марти соли ду ҳазору бисту шаш" (verify)
+    # 12.03.2026 -> "дувоздаҳуми марти соли ду ҳазору бисту шаш"
     return f"{to_ordinal(day)}и {MONTHS[month]}и соли {to_words(year)}"
 
 
 def _time(hours: int, minutes: int) -> str:
-    # 14:30 -> "соати чордаҳу сӣ дақиқа" (verify)
+    # 14:30 -> "соати чордаҳу сӣ"
     if not minutes:
         return f"соати {to_words(hours)}"
-    return f"соати {with_conjunction(to_words(hours))} {to_words(minutes)} дақиқа"
+    return f"соати {with_conjunction(to_words(hours))} {to_words(minutes)}"
 
 
 # 5-ум, 2-юм, 21-уми -> ordinal (with the izafat "и" kept)
