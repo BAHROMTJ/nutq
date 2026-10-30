@@ -10,7 +10,7 @@ The goal: become the standard open tool for script conversion and speech-ready t
 - [x] Plugin registry with entry points; CLI; 73 tests; Python 3.9+
 - [x] Tajik dates and times confirmed by a native speaker
 - [ ] Native-speaker review of the remaining forms marked `verify` (Tajik/Persian: Bahrom; Uzbek: needs a reviewer)
-- [ ] Publish to GitHub and PyPI (needs the maintainer's OK)
+- [x] Published to GitHub and PyPI (2026-10-30)
 - [ ] `tojiki` 0.2 becomes a thin wrapper over `nutq` so its existing users get the new features
 
 ## 0.2 — quality

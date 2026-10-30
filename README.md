@@ -1,5 +1,7 @@
 # nutq
 
+[![PyPI](https://img.shields.io/pypi/v/nutq)](https://pypi.org/project/nutq/) [![CI](https://github.com/BAHROMTJ/nutq/actions/workflows/ci.yml/badge.svg)](https://github.com/BAHROMTJ/nutq/actions/workflows/ci.yml)
+
 **Script conversion and text normalization for Tajik, Persian, Dari and Uzbek** — in pure Python, with no dependencies.
 
 *nutq* (нутқ · نطق · nutq) means "speech" in all three languages.
@@ -21,8 +23,6 @@ Status: **beta**. Each rule is tested, but native speakers still need to review 
 ```bash
 pip install nutq
 ```
-
-*(Not yet published. Until then: `pip install -e .` from a clone.)*
 
 ## Usage
 
