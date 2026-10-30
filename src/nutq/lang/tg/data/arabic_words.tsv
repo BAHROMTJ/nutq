@@ -1,0 +1,87 @@
+# Tajik Cyrillic -> Perso-Arabic spellings that the letter rules get wrong.
+#
+# Format: one word per line, Cyrillic <TAB> Arabic. Lines starting with # are
+# comments. Only add a word here when `nutq.convert(word, "tg", to="Arab")`
+# gives a wrong spelling; the rules already handle words like нон, шаб, барф.
+# Keep the list sorted by Cyrillic within each section.
+#
+# STATUS: drafted from standard Persian orthography; needs review by a
+# native Tajik/Persian speaker before the 1.0 release.
+
+# -- function words and pronouns
+ва	و
+зеро	زیرا
+ки	که
+чаро	چرا
+чи	چه
+чӣ	چه
+чунки	چونکه
+куҷо	کجا
+лекин	لیکن
+шумо	شما
+
+# -- numbers
+чор	چهار
+нӯҳ	نه
+сад	صد
+шонздаҳ	شانزده
+понздаҳ	پانزده
+ҳабдаҳ	هفده
+ҳаждаҳ	هجده
+
+# -- words with Arabic letters (ح ص ط ع ...)
+вақт	وقت
+ватан	وطن
+илм	علم
+инсон	انسان
+ишқ	عشق
+маъно	معنا
+миллат	ملت
+муҳаббат	محبت
+раҳмат	رحمت
+сабт	ثبت
+сифр	صفر
+ҳақ	حق
+ҳол	حال
+ҳозир	حاضر
+ҳукумат	حکومت
+шеър	شعر
+шахс	شخص
+таърих	تاریخ
+тарҷума	ترجمه
+
+# -- short vowels that Persian does not write
+бузург	بزرگ
+гул	گل
+гуфт	گفت
+дил	دل
+дониш	دانش
+донишгоҳ	دانشگاه
+дунё	دنیا
+духтар	دختر
+зиндагӣ	زندگی
+имрӯз	امروز
+китоб	کتاب
+кишвар	کشور
+мардум	مردم
+писар	پسر
+сухан	سخن
+хурд	خرد
+Худо	خدا
+Худованд	خداوند
+
+# -- historic spellings
+хоб	خواب
+хоҳар	خواهر
+хоҳиш	خواهش
+хостан	خواستن
+Душанбе	دوشنبه
+
+# -- place and personal names
+Афғонистон	افغانستان
+Бухоро	بخارا
+доллар	دلار
+Тоҷикистон	تاجیکستان
+Фирдавсӣ	فردوسی
+Хуҷанд	خجند
+Эрон	ایران
