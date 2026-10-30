@@ -1,0 +1,2982 @@
+[
+ {
+  "fn": "convert",
+  "args": [
+   "Душанбе",
+   "tg"
+  ],
+  "kwargs": {
+   "to": "Latn",
+   "source": null
+  },
+  "result": "Dushanbe"
+ },
+ {
+  "fn": "convert",
+  "args": [
+   "Toshkent",
+   "uz"
+  ],
+  "kwargs": {
+   "to": "cyrillic",
+   "source": null
+  },
+  "result": "Тошкент"
+ },
+ {
+  "fn": "number_to_words",
+  "args": [
+   2026,
+   "tg"
+  ],
+  "kwargs": {
+   "ordinal": false,
+   "script": null
+  },
+  "result": "ду ҳазору бисту шаш"
+ },
+ {
+  "fn": "number_to_words",
+  "args": [
+   2,
+   "uz"
+  ],
+  "kwargs": {
+   "ordinal": true,
+   "script": null
+  },
+  "result": "ikkinchi"
+ },
+ {
+  "fn": "normalize",
+  "args": [
+   "۱۵٪",
+   "fa"
+  ],
+  "kwargs": {},
+  "result": "پانزده درصد"
+ },
+ {
+  "fn": "clean",
+  "args": [
+   "Тoҷик",
+   "tg"
+  ],
+  "kwargs": {},
+  "result": "Тоҷик"
+ },
+ {
+  "fn": "convert",
+  "args": [
+   "салом",
+   "uz"
+  ],
+  "kwargs": {
+   "to": "Arab"
+  },
+  "error": "UnsupportedError"
+ },
+ {
+  "fn": "convert",
+  "args": [
+   "Душанбе",
+   "tg"
+  ],
+  "kwargs": {
+   "to": "Cyrl"
+  },
+  "result": "Душанбе"
+ },
+ {
+  "fn": "convert",
+  "args": [
+   "Тоҷикистон",
+   "tg"
+  ],
+  "kwargs": {
+   "to": "Arab"
+  },
+  "result": "تاجیکستان"
+ },
+ {
+  "fn": "normalize",
+  "args": [
+   "15%",
+   "uz"
+  ],
+  "kwargs": {},
+  "result": "oʻn besh foiz"
+ },
+ {
+  "fn": "clean",
+  "args": [
+   "كتابي",
+   "fa"
+  ],
+  "kwargs": {},
+  "result": "کتابی"
+ },
+ {
+  "fn": "clean",
+  "args": [
+   "سـلام ٢٠٢٦",
+   "fa"
+  ],
+  "kwargs": {},
+  "result": "سلام ۲۰۲۶"
+ },
+ {
+  "fn": "clean",
+  "args": [
+   "ﻻ",
+   "fa"
+  ],
+  "kwargs": {},
+  "result": "لا"
+ },
+ {
+  "fn": "clean",
+  "args": [
+   "می‌‌‌شود",
+   "fa"
+  ],
+  "kwargs": {},
+  "result": "می‌شود"
+ },
+ {
+  "fn": "clean",
+  "args": [
+   "کتاب‌ خوب",
+   "fa"
+  ],
+  "kwargs": {},
+  "result": "کتاب خوب"
+ },
+ {
+  "fn": "normalize",
+  "args": [
+   "۱۵٪",
+   "fa-AF"
+  ],
+  "kwargs": {},
+  "result": "پانزده فیصد"
+ },
+ {
+  "fn": "normalize",
+  "args": [
+   "۲٫۵",
+   "fa-AF"
+  ],
+  "kwargs": {},
+  "result": "دو اعشاریه پنج"
+ },
+ {
+  "fn": "normalize",
+  "args": [
+   "۱۴۰۵/۰۱/۱۲",
+   "fa-AF"
+  ],
+  "kwargs": {},
+  "result": "دوازدهم حمل هزار و چهارصد و پنج"
+ },
+ {
+  "fn": "normalize",
+  "args": [
+   "12.03.2026",
+   "fa-AF"
+  ],
+  "kwargs": {},
+  "result": "دوازدهم مارچ دو هزار و بیست و شش"
+ },
+ {
+  "fn": "normalize",
+  "args": [
+   "۱۰۰ ؋",
+   "fa-AF"
+  ],
+  "kwargs": {},
+  "result": "صد افغانی"
+ },
+ {
+  "fn": "normalize",
+  "args": [
+   "۲۸ اسد",
+   "fa-AF"
+  ],
+  "kwargs": {},
+  "result": "بیست و هشتم اسد"
+ },
+ {
+  "fn": "normalize",
+  "args": [
+   "قیمت ۲۵ دلار است",
+   "fa"
+  ],
+  "kwargs": {},
+  "result": "قیمت بیست و پنج دلار است"
+ },
+ {
+  "fn": "normalize",
+  "args": [
+   "۲٫۵",
+   "fa"
+  ],
+  "kwargs": {},
+  "result": "دو ممیز پنج"
+ },
+ {
+  "fn": "normalize",
+  "args": [
+   "2.05",
+   "fa"
+  ],
+  "kwargs": {},
+  "result": "دو ممیز صفر پنج"
+ },
+ {
+  "fn": "normalize",
+  "args": [
+   "$3.20",
+   "fa"
+  ],
+  "kwargs": {},
+  "result": "سه دلار و بیست سنت"
+ },
+ {
+  "fn": "normalize",
+  "args": [
+   "ساعت ۱۴:۳۰",
+   "fa"
+  ],
+  "kwargs": {},
+  "result": "ساعت چهارده و سی دقیقه"
+ },
+ {
+  "fn": "normalize",
+  "args": [
+   "۱۴۰۵/۰۱/۱۲",
+   "fa"
+  ],
+  "kwargs": {},
+  "result": "دوازدهم فروردین هزار و چهارصد و پنج"
+ },
+ {
+  "fn": "normalize",
+  "args": [
+   "12.03.2026",
+   "fa"
+  ],
+  "kwargs": {},
+  "result": "دوازدهم مارس دو هزار و بیست و شش"
+ },
+ {
+  "fn": "normalize",
+  "args": [
+   "۲۳م",
+   "fa"
+  ],
+  "kwargs": {},
+  "result": "بیست و سوم"
+ },
+ {
+  "fn": "normalize",
+  "args": [
+   "۱۳۹۰ ه.ش.",
+   "fa"
+  ],
+  "kwargs": {},
+  "result": "هزار و سیصد و نود هجری شمسی"
+ },
+ {
+  "fn": "normalize",
+  "args": [
+   "۱٬۲۵۰",
+   "fa"
+  ],
+  "kwargs": {},
+  "result": "هزار و دویست و پنجاه"
+ },
+ {
+  "fn": "normalize",
+  "args": [
+   "دمای ۳۰°C",
+   "fa"
+  ],
+  "kwargs": {},
+  "result": "دمای سی درجه"
+ },
+ {
+  "fn": "normalize",
+  "args": [
+   "۲۲ بهمن ۱۳۵۷",
+   "fa"
+  ],
+  "kwargs": {},
+  "result": "بیست و دوم بهمن هزار و سیصد و پنجاه و هفت"
+ },
+ {
+  "fn": "normalize",
+  "args": [
+   "نسخه ۱.۲.۳",
+   "fa"
+  ],
+  "kwargs": {},
+  "result": "نسخه یک نقطه دو نقطه سه"
+ },
+ {
+  "fn": "normalize",
+  "args": [
+   "+۹۸ ۹۱۲ ۳۴۵ ۶۷۸۹",
+   "fa"
+  ],
+  "kwargs": {},
+  "result": "نود و هشت، نهصد و دوازده، سیصد و چهل و پنج، شش هزار و هفتصد و هشتاد و نه"
+ },
+ {
+  "fn": "number_to_words",
+  "args": [
+   0,
+   "fa"
+  ],
+  "kwargs": {},
+  "result": "صفر"
+ },
+ {
+  "fn": "number_to_words",
+  "args": [
+   1,
+   "fa"
+  ],
+  "kwargs": {},
+  "result": "یک"
+ },
+ {
+  "fn": "number_to_words",
+  "args": [
+   11,
+   "fa"
+  ],
+  "kwargs": {},
+  "result": "یازده"
+ },
+ {
+  "fn": "number_to_words",
+  "args": [
+   15,
+   "fa"
+  ],
+  "kwargs": {},
+  "result": "پانزده"
+ },
+ {
+  "fn": "number_to_words",
+  "args": [
+   21,
+   "fa"
+  ],
+  "kwargs": {},
+  "result": "بیست و یک"
+ },
+ {
+  "fn": "number_to_words",
+  "args": [
+   100,
+   "fa"
+  ],
+  "kwargs": {},
+  "result": "صد"
+ },
+ {
+  "fn": "number_to_words",
+  "args": [
+   125,
+   "fa"
+  ],
+  "kwargs": {},
+  "result": "صد و بیست و پنج"
+ },
+ {
+  "fn": "number_to_words",
+  "args": [
+   200,
+   "fa"
+  ],
+  "kwargs": {},
+  "result": "دویست"
+ },
+ {
+  "fn": "number_to_words",
+  "args": [
+   500,
+   "fa"
+  ],
+  "kwargs": {},
+  "result": "پانصد"
+ },
+ {
+  "fn": "number_to_words",
+  "args": [
+   1000,
+   "fa"
+  ],
+  "kwargs": {},
+  "result": "هزار"
+ },
+ {
+  "fn": "number_to_words",
+  "args": [
+   1001,
+   "fa"
+  ],
+  "kwargs": {},
+  "result": "هزار و یک"
+ },
+ {
+  "fn": "number_to_words",
+  "args": [
+   1100,
+   "fa"
+  ],
+  "kwargs": {},
+  "result": "هزار و صد"
+ },
+ {
+  "fn": "number_to_words",
+  "args": [
+   2026,
+   "fa"
+  ],
+  "kwargs": {},
+  "result": "دو هزار و بیست و شش"
+ },
+ {
+  "fn": "number_to_words",
+  "args": [
+   1000000,
+   "fa"
+  ],
+  "kwargs": {},
+  "result": "یک میلیون"
+ },
+ {
+  "fn": "number_to_words",
+  "args": [
+   3000015,
+   "fa"
+  ],
+  "kwargs": {},
+  "result": "سه میلیون و پانزده"
+ },
+ {
+  "fn": "number_to_words",
+  "args": [
+   -4,
+   "fa"
+  ],
+  "kwargs": {},
+  "result": "منفی چهار"
+ },
+ {
+  "fn": "number_to_words",
+  "args": [
+   2026,
+   "prs"
+  ],
+  "kwargs": {},
+  "result": "دو هزار و بیست و شش"
+ },
+ {
+  "fn": "number_to_words",
+  "args": [
+   1,
+   "fa"
+  ],
+  "kwargs": {
+   "ordinal": true
+  },
+  "result": "یکم"
+ },
+ {
+  "fn": "number_to_words",
+  "args": [
+   2,
+   "fa"
+  ],
+  "kwargs": {
+   "ordinal": true
+  },
+  "result": "دوم"
+ },
+ {
+  "fn": "number_to_words",
+  "args": [
+   3,
+   "fa"
+  ],
+  "kwargs": {
+   "ordinal": true
+  },
+  "result": "سوم"
+ },
+ {
+  "fn": "number_to_words",
+  "args": [
+   13,
+   "fa"
+  ],
+  "kwargs": {
+   "ordinal": true
+  },
+  "result": "سیزدهم"
+ },
+ {
+  "fn": "number_to_words",
+  "args": [
+   23,
+   "fa"
+  ],
+  "kwargs": {
+   "ordinal": true
+  },
+  "result": "بیست و سوم"
+ },
+ {
+  "fn": "number_to_words",
+  "args": [
+   30,
+   "fa"
+  ],
+  "kwargs": {
+   "ordinal": true
+  },
+  "result": "سی‌ام"
+ },
+ {
+  "fn": "number_to_words",
+  "args": [
+   100,
+   "fa"
+  ],
+  "kwargs": {
+   "ordinal": true
+  },
+  "result": "صدم"
+ },
+ {
+  "fn": "number_to_words",
+  "args": [
+   1000,
+   "fa"
+  ],
+  "kwargs": {
+   "ordinal": true
+  },
+  "result": "هزارم"
+ },
+ {
+  "fn": "convert",
+  "args": [
+   "تاجیکستان",
+   "tg"
+  ],
+  "kwargs": {
+   "to": "Cyrl"
+  },
+  "result": "Тоҷикистон"
+ },
+ {
+  "fn": "convert",
+  "args": [
+   "کتاب‌ها",
+   "tg"
+  ],
+  "kwargs": {
+   "to": "Cyrl"
+  },
+  "result": "китобҳо"
+ },
+ {
+  "fn": "convert",
+  "args": [
+   "آب و نان",
+   "tg"
+  ],
+  "kwargs": {
+   "to": "Cyrl"
+  },
+  "result": "об ва нон"
+ },
+ {
+  "fn": "convert",
+  "args": [
+   "سلام، ۲۰۲۶",
+   "tg"
+  ],
+  "kwargs": {
+   "to": "Cyrl"
+  },
+  "result": "салом, 2026"
+ },
+ {
+  "fn": "convert",
+  "args": [
+   "می‌آیند",
+   "tg"
+  ],
+  "kwargs": {
+   "to": "Cyrl"
+  },
+  "result": "меоинд"
+ },
+ {
+  "fn": "convert",
+  "args": [
+   "نمی‌دانم",
+   "tg"
+  ],
+  "kwargs": {
+   "to": "Cyrl"
+  },
+  "result": "намедонм"
+ },
+ {
+  "fn": "convert",
+  "args": [
+   "خواب",
+   "tg"
+  ],
+  "kwargs": {
+   "to": "Cyrl"
+  },
+  "result": "хоб"
+ },
+ {
+  "fn": "convert",
+  "args": [
+   "ширинтар",
+   "tg"
+  ],
+  "kwargs": {
+   "to": "Arab"
+  },
+  "result": "شیرین‌تر"
+ },
+ {
+  "fn": "convert",
+  "args": [
+   "калонтарин",
+   "tg"
+  ],
+  "kwargs": {
+   "to": "Arab"
+  },
+  "result": "کلان‌ترین"
+ },
+ {
+  "fn": "convert",
+  "args": [
+   "хубтар",
+   "tg"
+  ],
+  "kwargs": {
+   "to": "Arab"
+  },
+  "result": "خوب‌تر"
+ },
+ {
+  "fn": "convert",
+  "args": [
+   "бештар",
+   "tg"
+  ],
+  "kwargs": {
+   "to": "Arab"
+  },
+  "result": "بیشتر"
+ },
+ {
+  "fn": "convert",
+  "args": [
+   "дафтар",
+   "tg"
+  ],
+  "kwargs": {
+   "to": "Arab"
+  },
+  "result": "دفتر"
+ },
+ {
+  "fn": "convert",
+  "args": [
+   "духтар",
+   "tg"
+  ],
+  "kwargs": {
+   "to": "Arab"
+  },
+  "result": "دختر"
+ },
+ {
+  "fn": "convert",
+  "args": [
+   "асри 21-ум",
+   "tg"
+  ],
+  "kwargs": {
+   "to": "Arab"
+  },
+  "result": "عصر ۲۱م"
+ },
+ {
+  "fn": "convert",
+  "args": [
+   "Dushanbe",
+   "tg"
+  ],
+  "kwargs": {
+   "to": "Arab"
+  },
+  "result": "دوشنبه"
+ },
+ {
+  "fn": "convert",
+  "args": [
+   "Русия",
+   "tg"
+  ],
+  "kwargs": {
+   "to": "Arab"
+  },
+  "result": "روسیه"
+ },
+ {
+  "fn": "convert",
+  "args": [
+   "адабиёт",
+   "tg"
+  ],
+  "kwargs": {
+   "to": "Arab"
+  },
+  "result": "ادبیات"
+ },
+ {
+  "fn": "convert",
+  "args": [
+   "Осиё",
+   "tg"
+  ],
+  "kwargs": {
+   "to": "Arab"
+  },
+  "result": "آسیا"
+ },
+ {
+  "fn": "convert",
+  "args": [
+   "нон",
+   "tg"
+  ],
+  "kwargs": {
+   "to": "Arab"
+  },
+  "result": "نان"
+ },
+ {
+  "fn": "convert",
+  "args": [
+   "шаб",
+   "tg"
+  ],
+  "kwargs": {
+   "to": "Arab"
+  },
+  "result": "شب"
+ },
+ {
+  "fn": "convert",
+  "args": [
+   "барф",
+   "tg"
+  ],
+  "kwargs": {
+   "to": "Arab"
+  },
+  "result": "برف"
+ },
+ {
+  "fn": "convert",
+  "args": [
+   "оташ",
+   "tg"
+  ],
+  "kwargs": {
+   "to": "Arab"
+  },
+  "result": "آتش"
+ },
+ {
+  "fn": "convert",
+  "args": [
+   "озод",
+   "tg"
+  ],
+  "kwargs": {
+   "to": "Arab"
+  },
+  "result": "آزاد"
+ },
+ {
+  "fn": "convert",
+  "args": [
+   "ном",
+   "tg"
+  ],
+  "kwargs": {
+   "to": "Arab"
+  },
+  "result": "نام"
+ },
+ {
+  "fn": "convert",
+  "args": [
+   "дарё",
+   "tg"
+  ],
+  "kwargs": {
+   "to": "Arab"
+  },
+  "result": "دریا"
+ },
+ {
+  "fn": "convert",
+  "args": [
+   "кӯҳ",
+   "tg"
+  ],
+  "kwargs": {
+   "to": "Arab"
+  },
+  "result": "کوه"
+ },
+ {
+  "fn": "convert",
+  "args": [
+   "рӯз",
+   "tg"
+  ],
+  "kwargs": {
+   "to": "Arab"
+  },
+  "result": "روز"
+ },
+ {
+  "fn": "convert",
+  "args": [
+   "сол",
+   "tg"
+  ],
+  "kwargs": {
+   "to": "Arab"
+  },
+  "result": "سال"
+ },
+ {
+  "fn": "convert",
+  "args": [
+   "Самарқанд",
+   "tg"
+  ],
+  "kwargs": {
+   "to": "Arab"
+  },
+  "result": "سمرقند"
+ },
+ {
+  "fn": "convert",
+  "args": [
+   "Рӯдакӣ",
+   "tg"
+  ],
+  "kwargs": {
+   "to": "Arab"
+  },
+  "result": "رودکی"
+ },
+ {
+  "fn": "convert",
+  "args": [
+   "панҷ",
+   "tg"
+  ],
+  "kwargs": {
+   "to": "Arab"
+  },
+  "result": "پنج"
+ },
+ {
+  "fn": "convert",
+  "args": [
+   "одам",
+   "tg"
+  ],
+  "kwargs": {
+   "to": "Arab"
+  },
+  "result": "آدم"
+ },
+ {
+  "fn": "convert",
+  "args": [
+   "хона",
+   "tg"
+  ],
+  "kwargs": {
+   "to": "Arab"
+  },
+  "result": "خانه"
+ },
+ {
+  "fn": "convert",
+  "args": [
+   "мактаб",
+   "tg"
+  ],
+  "kwargs": {
+   "to": "Arab"
+  },
+  "result": "مکتب"
+ },
+ {
+  "fn": "convert",
+  "args": [
+   "шаҳр",
+   "tg"
+  ],
+  "kwargs": {
+   "to": "Arab"
+  },
+  "result": "شهر"
+ },
+ {
+  "fn": "convert",
+  "args": [
+   "ҷаҳон",
+   "tg"
+  ],
+  "kwargs": {
+   "to": "Arab"
+  },
+  "result": "جهان"
+ },
+ {
+  "fn": "convert",
+  "args": [
+   "як",
+   "tg"
+  ],
+  "kwargs": {
+   "to": "Arab"
+  },
+  "result": "یک"
+ },
+ {
+  "fn": "convert",
+  "args": [
+   "аммо",
+   "tg"
+  ],
+  "kwargs": {
+   "to": "Arab"
+  },
+  "result": "اما"
+ },
+ {
+  "fn": "convert",
+  "args": [
+   "хеле",
+   "tg"
+  ],
+  "kwargs": {
+   "to": "Arab"
+  },
+  "result": "خیلی"
+ },
+ {
+  "fn": "convert",
+  "args": [
+   "шаъну шараф",
+   "tg"
+  ],
+  "kwargs": {
+   "to": "Arab"
+  },
+  "result": "شأن و شرف"
+ },
+ {
+  "fn": "convert",
+  "args": [
+   "форсу тоҷик",
+   "tg"
+  ],
+  "kwargs": {
+   "to": "Arab"
+  },
+  "result": "فارس و تاجیک"
+ },
+ {
+  "fn": "convert",
+  "args": [
+   "дунёю охират",
+   "tg"
+  ],
+  "kwargs": {
+   "to": "Arab"
+  },
+  "result": "دنیا و آخرت"
+ },
+ {
+  "fn": "convert",
+  "args": [
+   "ту ва ду",
+   "tg"
+  ],
+  "kwargs": {
+   "to": "Arab"
+  },
+  "result": "تو و دو"
+ },
+ {
+  "fn": "convert",
+  "args": [
+   "тарозу",
+   "tg"
+  ],
+  "kwargs": {
+   "to": "Arab"
+  },
+  "result": "ترازو"
+ },
+ {
+  "fn": "convert",
+  "args": [
+   "се",
+   "tg"
+  ],
+  "kwargs": {
+   "to": "Arab"
+  },
+  "result": "سه"
+ },
+ {
+  "fn": "convert",
+  "args": [
+   "чилу ду",
+   "tg"
+  ],
+  "kwargs": {
+   "to": "Arab"
+  },
+  "result": "چهل و دو"
+ },
+ {
+  "fn": "convert",
+  "args": [
+   "сеюм",
+   "tg"
+  ],
+  "kwargs": {
+   "to": "Arab"
+  },
+  "result": "سوم"
+ },
+ {
+  "fn": "convert",
+  "args": [
+   "сиюм",
+   "tg"
+  ],
+  "kwargs": {
+   "to": "Arab"
+  },
+  "result": "سی‌ام"
+ },
+ {
+  "fn": "convert",
+  "args": [
+   "дувоздаҳуми марти соли ду ҳазору бисту шаш, соати чордаҳу сӣ",
+   "tg"
+  ],
+  "kwargs": {
+   "to": "Arab"
+  },
+  "result": "دوازدهم مارس سال دو هزار و بیست و شش، ساعت چهارده و سی"
+ },
+ {
+  "fn": "convert",
+  "args": [
+   "Салом, дӯстон!",
+   "tg"
+  ],
+  "kwargs": {
+   "to": "Arab"
+  },
+  "result": "سلام، دوستان!"
+ },
+ {
+  "fn": "convert",
+  "args": [
+   "2,5 ё 10?",
+   "tg"
+  ],
+  "kwargs": {
+   "to": "Arab"
+  },
+  "result": "۲٫۵ یا ۱۰؟"
+ },
+ {
+  "fn": "convert",
+  "args": [
+   "Забони давлатии Ҷумҳурии Тоҷикистон забони тоҷикӣ мебошад.",
+   "tg"
+  ],
+  "kwargs": {
+   "to": "Arab"
+  },
+  "result": "زبان دولتی جمهوری تاجیکستان زبان تاجیکی می‌باشد."
+ },
+ {
+  "fn": "convert",
+  "args": [
+   "Ман китобро хондам, вале ӯ нахонд.",
+   "tg"
+  ],
+  "kwargs": {
+   "to": "Arab"
+  },
+  "result": "من کتاب را خواندم، ولی او نخواند."
+ },
+ {
+  "fn": "convert",
+  "args": [
+   "Ин ҷо донишҷӯён таҳсил мекунанд.",
+   "tg"
+  ],
+  "kwargs": {
+   "to": "Arab"
+  },
+  "result": "این جا دانشجویان تحصیل می‌کنند."
+ },
+ {
+  "fn": "convert",
+  "args": [
+   "Тоҷикистон дар Осиёи Марказӣ ҷойгир аст.",
+   "tg"
+  ],
+  "kwargs": {
+   "to": "Arab"
+  },
+  "result": "تاجیکستان در آسیای مرکزی جایگیر است."
+ },
+ {
+  "fn": "convert",
+  "args": [
+   "Устод Рӯдакӣ падари шеъри форсӣ ҳисоб мешавад.",
+   "tg"
+  ],
+  "kwargs": {
+   "to": "Arab"
+  },
+  "result": "استاد رودکی پدر شعر فارسی حساب می‌شود."
+ },
+ {
+  "fn": "convert",
+  "args": [
+   "Имрӯз ҳаво гарм аст ва мо ба боғ меравем.",
+   "tg"
+  ],
+  "kwargs": {
+   "to": "Arab"
+  },
+  "result": "امروز هوا گرم است و ما به باغ می‌رویم."
+ },
+ {
+  "fn": "convert",
+  "args": [
+   "китобҳо",
+   "tg"
+  ],
+  "kwargs": {
+   "to": "Arab"
+  },
+  "result": "کتاب‌ها"
+ },
+ {
+  "fn": "convert",
+  "args": [
+   "Тоҷикистонро",
+   "tg"
+  ],
+  "kwargs": {
+   "to": "Arab"
+  },
+  "result": "تاجیکستان را"
+ },
+ {
+  "fn": "convert",
+  "args": [
+   "забони тоҷикӣ",
+   "tg"
+  ],
+  "kwargs": {
+   "to": "Arab"
+  },
+  "result": "زبان تاجیکی"
+ },
+ {
+  "fn": "convert",
+  "args": [
+   "хонаи калон",
+   "tg"
+  ],
+  "kwargs": {
+   "to": "Arab"
+  },
+  "result": "خانه‌ی کلان"
+ },
+ {
+  "fn": "convert",
+  "args": [
+   "мешавад",
+   "tg"
+  ],
+  "kwargs": {
+   "to": "Arab"
+  },
+  "result": "می‌شود"
+ },
+ {
+  "fn": "convert",
+  "args": [
+   "намешавам",
+   "tg"
+  ],
+  "kwargs": {
+   "to": "Arab"
+  },
+  "result": "نمی‌شوم"
+ },
+ {
+  "fn": "convert",
+  "args": [
+   "меоянд",
+   "tg"
+  ],
+  "kwargs": {
+   "to": "Arab"
+  },
+  "result": "می‌آیند"
+ },
+ {
+  "fn": "convert",
+  "args": [
+   "мева",
+   "tg"
+  ],
+  "kwargs": {
+   "to": "Arab"
+  },
+  "result": "میوه"
+ },
+ {
+  "fn": "convert",
+  "args": [
+   "китоб",
+   "tg"
+  ],
+  "kwargs": {
+   "to": "Arab"
+  },
+  "result": "کتاب"
+ },
+ {
+  "fn": "convert",
+  "args": [
+   "дил",
+   "tg"
+  ],
+  "kwargs": {
+   "to": "Arab"
+  },
+  "result": "دل"
+ },
+ {
+  "fn": "convert",
+  "args": [
+   "ки",
+   "tg"
+  ],
+  "kwargs": {
+   "to": "Arab"
+  },
+  "result": "که"
+ },
+ {
+  "fn": "convert",
+  "args": [
+   "ва",
+   "tg"
+  ],
+  "kwargs": {
+   "to": "Arab"
+  },
+  "result": "و"
+ },
+ {
+  "fn": "convert",
+  "args": [
+   "Душанбе",
+   "tg"
+  ],
+  "kwargs": {
+   "to": "Arab"
+  },
+  "result": "دوشنبه"
+ },
+ {
+  "fn": "convert",
+  "args": [
+   "илм",
+   "tg"
+  ],
+  "kwargs": {
+   "to": "Arab"
+  },
+  "result": "علم"
+ },
+ {
+  "fn": "clean",
+  "args": [
+   "Hello, дунё",
+   "tg"
+  ],
+  "kwargs": {},
+  "result": "Hello, дунё"
+ },
+ {
+  "fn": "clean",
+  "args": [
+   "һафта",
+   "tg"
+  ],
+  "kwargs": {},
+  "result": "ҳафта"
+ },
+ {
+  "fn": "clean",
+  "args": [
+   "тоҷикӣ",
+   "tg"
+  ],
+  "kwargs": {},
+  "result": "тоҷикӣ"
+ },
+ {
+  "fn": "convert",
+  "args": [
+   "2026, ok!",
+   "tg"
+  ],
+  "kwargs": {
+   "to": "Latn"
+  },
+  "result": "2026, ok!"
+ },
+ {
+  "fn": "convert",
+  "args": [
+   "Тоҷикистон",
+   "tg"
+  ],
+  "kwargs": {
+   "to": "Latn"
+  },
+  "result": "Tojikiston"
+ },
+ {
+  "fn": "convert",
+  "args": [
+   "Tojikiston",
+   "tg"
+  ],
+  "kwargs": {
+   "to": "Cyrl"
+  },
+  "result": "Тоҷикистон"
+ },
+ {
+  "fn": "convert",
+  "args": [
+   "Душанбе",
+   "tg"
+  ],
+  "kwargs": {
+   "to": "Latn"
+  },
+  "result": "Dushanbe"
+ },
+ {
+  "fn": "convert",
+  "args": [
+   "Dushanbe",
+   "tg"
+  ],
+  "kwargs": {
+   "to": "Cyrl"
+  },
+  "result": "Душанбе"
+ },
+ {
+  "fn": "convert",
+  "args": [
+   "Хуҷанд",
+   "tg"
+  ],
+  "kwargs": {
+   "to": "Latn"
+  },
+  "result": "Khujand"
+ },
+ {
+  "fn": "convert",
+  "args": [
+   "Khujand",
+   "tg"
+  ],
+  "kwargs": {
+   "to": "Cyrl"
+  },
+  "result": "Хуҷанд"
+ },
+ {
+  "fn": "convert",
+  "args": [
+   "Ғафуров",
+   "tg"
+  ],
+  "kwargs": {
+   "to": "Latn"
+  },
+  "result": "Ghafurov"
+ },
+ {
+  "fn": "convert",
+  "args": [
+   "Ghafurov",
+   "tg"
+  ],
+  "kwargs": {
+   "to": "Cyrl"
+  },
+  "result": "Ғафуров"
+ },
+ {
+  "fn": "convert",
+  "args": [
+   "Қӯрғонтеппа",
+   "tg"
+  ],
+  "kwargs": {
+   "to": "Latn"
+  },
+  "result": "Qūrghonteppa"
+ },
+ {
+  "fn": "convert",
+  "args": [
+   "Qūrghonteppa",
+   "tg"
+  ],
+  "kwargs": {
+   "to": "Cyrl"
+  },
+  "result": "Қӯрғонтеппа"
+ },
+ {
+  "fn": "convert",
+  "args": [
+   "шаҳр",
+   "tg"
+  ],
+  "kwargs": {
+   "to": "Latn"
+  },
+  "result": "shahr"
+ },
+ {
+  "fn": "convert",
+  "args": [
+   "shahr",
+   "tg"
+  ],
+  "kwargs": {
+   "to": "Cyrl"
+  },
+  "result": "шаҳр"
+ },
+ {
+  "fn": "convert",
+  "args": [
+   "ҒАФУРОВ",
+   "tg"
+  ],
+  "kwargs": {
+   "to": "Latn"
+  },
+  "result": "GHAFUROV"
+ },
+ {
+  "fn": "convert",
+  "args": [
+   "забони тоҷикӣ",
+   "tg"
+  ],
+  "kwargs": {
+   "to": "Latn"
+  },
+  "result": "zaboni tojikī"
+ },
+ {
+  "fn": "normalize",
+  "args": [
+   "ҶТ",
+   "tg"
+  ],
+  "kwargs": {},
+  "result": "Ҷумҳурии Тоҷикистон"
+ },
+ {
+  "fn": "normalize",
+  "args": [
+   "5 млн",
+   "tg"
+  ],
+  "kwargs": {},
+  "result": "панҷ миллион"
+ },
+ {
+  "fn": "normalize",
+  "args": [
+   "китобҳо ва ғ.",
+   "tg"
+  ],
+  "kwargs": {},
+  "result": "китобҳо ва ғайра"
+ },
+ {
+  "fn": "normalize",
+  "args": [
+   "Тoҷик 2",
+   "tg"
+  ],
+  "kwargs": {},
+  "result": "Тоҷик ду"
+ },
+ {
+  "fn": "normalize",
+  "args": [
+   "12.03.2026",
+   "tg"
+  ],
+  "kwargs": {},
+  "result": "дувоздаҳуми марти соли ду ҳазору бисту шаш"
+ },
+ {
+  "fn": "normalize",
+  "args": [
+   "2026-01-01",
+   "tg"
+  ],
+  "kwargs": {},
+  "result": "якуми январи соли ду ҳазору бисту шаш"
+ },
+ {
+  "fn": "normalize",
+  "args": [
+   "Соати 14:30",
+   "tg"
+  ],
+  "kwargs": {},
+  "result": "Соати чордаҳу сӣ"
+ },
+ {
+  "fn": "normalize",
+  "args": [
+   "дар 9:00",
+   "tg"
+  ],
+  "kwargs": {},
+  "result": "дар соати нӯҳ"
+ },
+ {
+  "fn": "normalize",
+  "args": [
+   "Нархи 25 $ аст",
+   "tg"
+  ],
+  "kwargs": {},
+  "result": "Нархи бисту панҷ доллар аст"
+ },
+ {
+  "fn": "normalize",
+  "args": [
+   "$2.50",
+   "tg"
+  ],
+  "kwargs": {},
+  "result": "ду доллару панҷоҳ сент"
+ },
+ {
+  "fn": "normalize",
+  "args": [
+   "100 смн",
+   "tg"
+  ],
+  "kwargs": {},
+  "result": "сад сомонӣ"
+ },
+ {
+  "fn": "normalize",
+  "args": [
+   "12,30 смн",
+   "tg"
+  ],
+  "kwargs": {},
+  "result": "дувоздаҳ сомониву сӣ дирам"
+ },
+ {
+  "fn": "normalize",
+  "args": [
+   "15% тахфиф",
+   "tg"
+  ],
+  "kwargs": {},
+  "result": "понздаҳ фоиз тахфиф"
+ },
+ {
+  "fn": "normalize",
+  "args": [
+   "5 китоб",
+   "tg"
+  ],
+  "kwargs": {},
+  "result": "панҷ китоб"
+ },
+ {
+  "fn": "normalize",
+  "args": [
+   "1 000 000 нафар",
+   "tg"
+  ],
+  "kwargs": {},
+  "result": "як миллион нафар"
+ },
+ {
+  "fn": "normalize",
+  "args": [
+   "2,5 кг",
+   "tg"
+  ],
+  "kwargs": {},
+  "result": "ду бутуну панҷ даҳум килограмм"
+ },
+ {
+  "fn": "normalize",
+  "args": [
+   "-7 дараҷа",
+   "tg"
+  ],
+  "kwargs": {},
+  "result": "минус ҳафт дараҷа"
+ },
+ {
+  "fn": "normalize",
+  "args": [
+   "соли 2020-2026",
+   "tg"
+  ],
+  "kwargs": {},
+  "result": "соли ду ҳазору бист-ду ҳазору бисту шаш"
+ },
+ {
+  "fn": "normalize",
+  "args": [
+   "10км",
+   "tg"
+  ],
+  "kwargs": {},
+  "result": "даҳ километр"
+ },
+ {
+  "fn": "normalize",
+  "args": [
+   "синфи 5-ум",
+   "tg"
+  ],
+  "kwargs": {},
+  "result": "синфи панҷум"
+ },
+ {
+  "fn": "normalize",
+  "args": [
+   "2-юми март",
+   "tg"
+  ],
+  "kwargs": {},
+  "result": "дуюми март"
+ },
+ {
+  "fn": "normalize",
+  "args": [
+   "+992 93 123 45 67",
+   "tg"
+  ],
+  "kwargs": {},
+  "result": "нӯҳсаду наваду ду, наваду се, саду бисту се, чилу панҷ, шасту ҳафт"
+ },
+ {
+  "fn": "normalize",
+  "args": [
+   "Версияи 2.0.1",
+   "tg"
+  ],
+  "kwargs": {},
+  "result": "Версияи ду нуқта сифр нуқта як"
+ },
+ {
+  "fn": "normalize",
+  "args": [
+   "-5°C",
+   "tg"
+  ],
+  "kwargs": {},
+  "result": "минус панҷ дараҷа"
+ },
+ {
+  "fn": "normalize",
+  "args": [
+   "30 °",
+   "tg"
+  ],
+  "kwargs": {},
+  "result": "сӣ дараҷа"
+ },
+ {
+  "fn": "number_to_words",
+  "args": [
+   0,
+   "tg"
+  ],
+  "kwargs": {
+   "ordinal": false
+  },
+  "result": "сифр"
+ },
+ {
+  "fn": "number_to_words",
+  "args": [
+   1,
+   "tg"
+  ],
+  "kwargs": {
+   "ordinal": false
+  },
+  "result": "як"
+ },
+ {
+  "fn": "number_to_words",
+  "args": [
+   11,
+   "tg"
+  ],
+  "kwargs": {
+   "ordinal": false
+  },
+  "result": "ёздаҳ"
+ },
+ {
+  "fn": "number_to_words",
+  "args": [
+   19,
+   "tg"
+  ],
+  "kwargs": {
+   "ordinal": false
+  },
+  "result": "нуздаҳ"
+ },
+ {
+  "fn": "number_to_words",
+  "args": [
+   21,
+   "tg"
+  ],
+  "kwargs": {
+   "ordinal": false
+  },
+  "result": "бисту як"
+ },
+ {
+  "fn": "number_to_words",
+  "args": [
+   30,
+   "tg"
+  ],
+  "kwargs": {
+   "ordinal": false
+  },
+  "result": "сӣ"
+ },
+ {
+  "fn": "number_to_words",
+  "args": [
+   32,
+   "tg"
+  ],
+  "kwargs": {
+   "ordinal": false
+  },
+  "result": "сиву ду"
+ },
+ {
+  "fn": "number_to_words",
+  "args": [
+   100,
+   "tg"
+  ],
+  "kwargs": {
+   "ordinal": false
+  },
+  "result": "сад"
+ },
+ {
+  "fn": "number_to_words",
+  "args": [
+   125,
+   "tg"
+  ],
+  "kwargs": {
+   "ordinal": false
+  },
+  "result": "саду бисту панҷ"
+ },
+ {
+  "fn": "number_to_words",
+  "args": [
+   909,
+   "tg"
+  ],
+  "kwargs": {
+   "ordinal": false
+  },
+  "result": "нӯҳсаду нӯҳ"
+ },
+ {
+  "fn": "number_to_words",
+  "args": [
+   1000,
+   "tg"
+  ],
+  "kwargs": {
+   "ordinal": false
+  },
+  "result": "як ҳазор"
+ },
+ {
+  "fn": "number_to_words",
+  "args": [
+   1001,
+   "tg"
+  ],
+  "kwargs": {
+   "ordinal": false
+  },
+  "result": "як ҳазору як"
+ },
+ {
+  "fn": "number_to_words",
+  "args": [
+   2026,
+   "tg"
+  ],
+  "kwargs": {
+   "ordinal": false
+  },
+  "result": "ду ҳазору бисту шаш"
+ },
+ {
+  "fn": "number_to_words",
+  "args": [
+   2500,
+   "tg"
+  ],
+  "kwargs": {
+   "ordinal": false
+  },
+  "result": "ду ҳазору панҷсад"
+ },
+ {
+  "fn": "number_to_words",
+  "args": [
+   1000000,
+   "tg"
+  ],
+  "kwargs": {
+   "ordinal": false
+  },
+  "result": "як миллион"
+ },
+ {
+  "fn": "number_to_words",
+  "args": [
+   3000015,
+   "tg"
+  ],
+  "kwargs": {
+   "ordinal": false
+  },
+  "result": "се миллиону понздаҳ"
+ },
+ {
+  "fn": "number_to_words",
+  "args": [
+   -7,
+   "tg"
+  ],
+  "kwargs": {
+   "ordinal": false
+  },
+  "result": "минус ҳафт"
+ },
+ {
+  "fn": "number_to_words",
+  "args": [
+   1.5,
+   "tg"
+  ],
+  "kwargs": {
+   "ordinal": false
+  },
+  "error": "TypeError"
+ },
+ {
+  "fn": "number_to_words",
+  "args": [
+   true,
+   "tg"
+  ],
+  "kwargs": {
+   "ordinal": false
+  },
+  "error": "TypeError"
+ },
+ {
+  "fn": "number_to_words",
+  "args": [
+   0,
+   "tg"
+  ],
+  "kwargs": {
+   "ordinal": true
+  },
+  "error": "ValueError"
+ },
+ {
+  "fn": "number_to_words",
+  "args": [
+   1000000000000000000,
+   "tg"
+  ],
+  "kwargs": {
+   "ordinal": false
+  },
+  "error": "ValueError"
+ },
+ {
+  "fn": "number_to_words",
+  "args": [
+   1,
+   "tg"
+  ],
+  "kwargs": {
+   "ordinal": true
+  },
+  "result": "якум"
+ },
+ {
+  "fn": "number_to_words",
+  "args": [
+   2,
+   "tg"
+  ],
+  "kwargs": {
+   "ordinal": true
+  },
+  "result": "дуюм"
+ },
+ {
+  "fn": "number_to_words",
+  "args": [
+   3,
+   "tg"
+  ],
+  "kwargs": {
+   "ordinal": true
+  },
+  "result": "сеюм"
+ },
+ {
+  "fn": "number_to_words",
+  "args": [
+   4,
+   "tg"
+  ],
+  "kwargs": {
+   "ordinal": true
+  },
+  "result": "чорум"
+ },
+ {
+  "fn": "number_to_words",
+  "args": [
+   10,
+   "tg"
+  ],
+  "kwargs": {
+   "ordinal": true
+  },
+  "result": "даҳум"
+ },
+ {
+  "fn": "number_to_words",
+  "args": [
+   21,
+   "tg"
+  ],
+  "kwargs": {
+   "ordinal": true
+  },
+  "result": "бисту якум"
+ },
+ {
+  "fn": "number_to_words",
+  "args": [
+   30,
+   "tg"
+  ],
+  "kwargs": {
+   "ordinal": true
+  },
+  "result": "сиюм"
+ },
+ {
+  "fn": "number_to_words",
+  "args": [
+   100,
+   "tg"
+  ],
+  "kwargs": {
+   "ordinal": true
+  },
+  "result": "садум"
+ },
+ {
+  "fn": "number_to_words",
+  "args": [
+   25,
+   "tg"
+  ],
+  "kwargs": {
+   "script": "Latn"
+  },
+  "result": "bistu panj"
+ },
+ {
+  "fn": "number_to_words",
+  "args": [
+   2026,
+   "tg"
+  ],
+  "kwargs": {
+   "script": "Arab"
+  },
+  "result": "دو هزار و بیست و شش"
+ },
+ {
+  "fn": "clean",
+  "args": [
+   "O'zbekiston, ma'no",
+   "uz"
+  ],
+  "kwargs": {},
+  "result": "Oʻzbekiston, maʼno"
+ },
+ {
+  "fn": "clean",
+  "args": [
+   "Тoшкент",
+   "uz"
+  ],
+  "kwargs": {},
+  "result": "Тошкент"
+ },
+ {
+  "fn": "normalize",
+  "args": [
+   "Нархи 25 $",
+   "uz"
+  ],
+  "kwargs": {},
+  "result": "Нархи йигирма беш доллар"
+ },
+ {
+  "fn": "normalize",
+  "args": [
+   "5-синф",
+   "uz"
+  ],
+  "kwargs": {},
+  "result": "бешинчи синф"
+ },
+ {
+  "fn": "normalize",
+  "args": [
+   "Сана: 12.03.2026",
+   "uz"
+  ],
+  "kwargs": {},
+  "result": "Сана: икки минг йигирма олтинчи йил ўн иккинчи март"
+ },
+ {
+  "fn": "normalize",
+  "args": [
+   "АҚШ",
+   "uz"
+  ],
+  "kwargs": {},
+  "result": "Америка Қўшма Штатлари"
+ },
+ {
+  "fn": "normalize",
+  "args": [
+   "Ҳарорат -3°C",
+   "uz"
+  ],
+  "kwargs": {},
+  "result": "Ҳарорат минус уч даража"
+ },
+ {
+  "fn": "normalize",
+  "args": [
+   "1991 йил 31 августда",
+   "uz"
+  ],
+  "kwargs": {},
+  "result": "минг тўққиз юз тўқсон биринчи йил ўттиз биринчи августда"
+ },
+ {
+  "fn": "normalize",
+  "args": [
+   "Narxi 25 $",
+   "uz"
+  ],
+  "kwargs": {},
+  "result": "Narxi yigirma besh dollar"
+ },
+ {
+  "fn": "normalize",
+  "args": [
+   "2026-yil 12-mart",
+   "uz"
+  ],
+  "kwargs": {},
+  "result": "ikki ming yigirma oltinchi yil oʻn ikkinchi mart"
+ },
+ {
+  "fn": "normalize",
+  "args": [
+   "12.03.2026",
+   "uz"
+  ],
+  "kwargs": {},
+  "result": "ikki ming yigirma oltinchi yil oʻn ikkinchi mart"
+ },
+ {
+  "fn": "normalize",
+  "args": [
+   "15% chegirma",
+   "uz"
+  ],
+  "kwargs": {},
+  "result": "oʻn besh foiz chegirma"
+ },
+ {
+  "fn": "normalize",
+  "args": [
+   "2,5 kg",
+   "uz"
+  ],
+  "kwargs": {},
+  "result": "ikki butun oʻndan besh kilogramm"
+ },
+ {
+  "fn": "normalize",
+  "args": [
+   "10000 so'm",
+   "uz"
+  ],
+  "kwargs": {},
+  "result": "oʻn ming soʻm"
+ },
+ {
+  "fn": "normalize",
+  "args": [
+   "3-chi",
+   "uz"
+  ],
+  "kwargs": {},
+  "result": "uchinchi"
+ },
+ {
+  "fn": "normalize",
+  "args": [
+   "soat 14:30",
+   "uz"
+  ],
+  "kwargs": {},
+  "result": "soat oʻn toʻrt oʻttiz daqiqa"
+ },
+ {
+  "fn": "normalize",
+  "args": [
+   "AQSH",
+   "uz"
+  ],
+  "kwargs": {},
+  "result": "Amerika Qoʻshma Shtatlari"
+ },
+ {
+  "fn": "normalize",
+  "args": [
+   "1991 yil 31 avgust",
+   "uz"
+  ],
+  "kwargs": {},
+  "result": "ming toʻqqiz yuz toʻqson birinchi yil oʻttiz birinchi avgust"
+ },
+ {
+  "fn": "normalize",
+  "args": [
+   "+998 71 123 45 67",
+   "uz"
+  ],
+  "kwargs": {},
+  "result": "toʻqqiz yuz toʻqson sakkiz, yetmish bir, yuz yigirma uch, qirq besh, oltmish yetti"
+ },
+ {
+  "fn": "number_to_words",
+  "args": [
+   0,
+   "uz"
+  ],
+  "kwargs": {},
+  "result": "nol"
+ },
+ {
+  "fn": "number_to_words",
+  "args": [
+   1,
+   "uz"
+  ],
+  "kwargs": {},
+  "result": "bir"
+ },
+ {
+  "fn": "number_to_words",
+  "args": [
+   11,
+   "uz"
+  ],
+  "kwargs": {},
+  "result": "oʻn bir"
+ },
+ {
+  "fn": "number_to_words",
+  "args": [
+   21,
+   "uz"
+  ],
+  "kwargs": {},
+  "result": "yigirma bir"
+ },
+ {
+  "fn": "number_to_words",
+  "args": [
+   40,
+   "uz"
+  ],
+  "kwargs": {},
+  "result": "qirq"
+ },
+ {
+  "fn": "number_to_words",
+  "args": [
+   100,
+   "uz"
+  ],
+  "kwargs": {},
+  "result": "yuz"
+ },
+ {
+  "fn": "number_to_words",
+  "args": [
+   125,
+   "uz"
+  ],
+  "kwargs": {},
+  "result": "yuz yigirma besh"
+ },
+ {
+  "fn": "number_to_words",
+  "args": [
+   300,
+   "uz"
+  ],
+  "kwargs": {},
+  "result": "uch yuz"
+ },
+ {
+  "fn": "number_to_words",
+  "args": [
+   1000,
+   "uz"
+  ],
+  "kwargs": {},
+  "result": "ming"
+ },
+ {
+  "fn": "number_to_words",
+  "args": [
+   1001,
+   "uz"
+  ],
+  "kwargs": {},
+  "result": "ming bir"
+ },
+ {
+  "fn": "number_to_words",
+  "args": [
+   2026,
+   "uz"
+  ],
+  "kwargs": {},
+  "result": "ikki ming yigirma olti"
+ },
+ {
+  "fn": "number_to_words",
+  "args": [
+   1000000,
+   "uz"
+  ],
+  "kwargs": {},
+  "result": "bir million"
+ },
+ {
+  "fn": "number_to_words",
+  "args": [
+   3000015,
+   "uz"
+  ],
+  "kwargs": {},
+  "result": "uch million oʻn besh"
+ },
+ {
+  "fn": "number_to_words",
+  "args": [
+   -5,
+   "uz"
+  ],
+  "kwargs": {},
+  "result": "minus besh"
+ },
+ {
+  "fn": "number_to_words",
+  "args": [
+   2026,
+   "uz"
+  ],
+  "kwargs": {
+   "script": "Cyrl"
+  },
+  "result": "икки минг йигирма олти"
+ },
+ {
+  "fn": "number_to_words",
+  "args": [
+   4,
+   "uz"
+  ],
+  "kwargs": {
+   "script": "Cyrl",
+   "ordinal": true
+  },
+  "result": "тўртинчи"
+ },
+ {
+  "fn": "number_to_words",
+  "args": [
+   1,
+   "uz"
+  ],
+  "kwargs": {
+   "ordinal": true
+  },
+  "result": "birinchi"
+ },
+ {
+  "fn": "number_to_words",
+  "args": [
+   2,
+   "uz"
+  ],
+  "kwargs": {
+   "ordinal": true
+  },
+  "result": "ikkinchi"
+ },
+ {
+  "fn": "number_to_words",
+  "args": [
+   3,
+   "uz"
+  ],
+  "kwargs": {
+   "ordinal": true
+  },
+  "result": "uchinchi"
+ },
+ {
+  "fn": "number_to_words",
+  "args": [
+   4,
+   "uz"
+  ],
+  "kwargs": {
+   "ordinal": true
+  },
+  "result": "toʻrtinchi"
+ },
+ {
+  "fn": "number_to_words",
+  "args": [
+   6,
+   "uz"
+  ],
+  "kwargs": {
+   "ordinal": true
+  },
+  "result": "oltinchi"
+ },
+ {
+  "fn": "number_to_words",
+  "args": [
+   7,
+   "uz"
+  ],
+  "kwargs": {
+   "ordinal": true
+  },
+  "result": "yettinchi"
+ },
+ {
+  "fn": "number_to_words",
+  "args": [
+   20,
+   "uz"
+  ],
+  "kwargs": {
+   "ordinal": true
+  },
+  "result": "yigirmanchi"
+ },
+ {
+  "fn": "number_to_words",
+  "args": [
+   30,
+   "uz"
+  ],
+  "kwargs": {
+   "ordinal": true
+  },
+  "result": "oʻttizinchi"
+ },
+ {
+  "fn": "number_to_words",
+  "args": [
+   100,
+   "uz"
+  ],
+  "kwargs": {
+   "ordinal": true
+  },
+  "result": "yuzinchi"
+ },
+ {
+  "fn": "convert",
+  "args": [
+   "O'zbekiston, g‘alaba",
+   "uz"
+  ],
+  "kwargs": {
+   "to": "Cyrl"
+  },
+  "result": "Ўзбекистон, ғалаба"
+ },
+ {
+  "fn": "convert",
+  "args": [
+   "Ўзбекистон",
+   "uz"
+  ],
+  "kwargs": {
+   "to": "Latn"
+  },
+  "result": "Oʻzbekiston"
+ },
+ {
+  "fn": "convert",
+  "args": [
+   "Oʻzbekiston",
+   "uz"
+  ],
+  "kwargs": {
+   "to": "Cyrl"
+  },
+  "result": "Ўзбекистон"
+ },
+ {
+  "fn": "convert",
+  "args": [
+   "Тошкент",
+   "uz"
+  ],
+  "kwargs": {
+   "to": "Latn"
+  },
+  "result": "Toshkent"
+ },
+ {
+  "fn": "convert",
+  "args": [
+   "Toshkent",
+   "uz"
+  ],
+  "kwargs": {
+   "to": "Cyrl"
+  },
+  "result": "Тошкент"
+ },
+ {
+  "fn": "convert",
+  "args": [
+   "Самарқанд",
+   "uz"
+  ],
+  "kwargs": {
+   "to": "Latn"
+  },
+  "result": "Samarqand"
+ },
+ {
+  "fn": "convert",
+  "args": [
+   "Samarqand",
+   "uz"
+  ],
+  "kwargs": {
+   "to": "Cyrl"
+  },
+  "result": "Самарқанд"
+ },
+ {
+  "fn": "convert",
+  "args": [
+   "ғалаба",
+   "uz"
+  ],
+  "kwargs": {
+   "to": "Latn"
+  },
+  "result": "gʻalaba"
+ },
+ {
+  "fn": "convert",
+  "args": [
+   "gʻalaba",
+   "uz"
+  ],
+  "kwargs": {
+   "to": "Cyrl"
+  },
+  "result": "ғалаба"
+ },
+ {
+  "fn": "convert",
+  "args": [
+   "маъно",
+   "uz"
+  ],
+  "kwargs": {
+   "to": "Latn"
+  },
+  "result": "maʼno"
+ },
+ {
+  "fn": "convert",
+  "args": [
+   "maʼno",
+   "uz"
+  ],
+  "kwargs": {
+   "to": "Cyrl"
+  },
+  "result": "маъно"
+ },
+ {
+  "fn": "convert",
+  "args": [
+   "поезд",
+   "uz"
+  ],
+  "kwargs": {
+   "to": "Latn"
+  },
+  "result": "poyezd"
+ },
+ {
+  "fn": "convert",
+  "args": [
+   "poyezd",
+   "uz"
+  ],
+  "kwargs": {
+   "to": "Cyrl"
+  },
+  "result": "поезд"
+ },
+ {
+  "fn": "convert",
+  "args": [
+   "Европа",
+   "uz"
+  ],
+  "kwargs": {
+   "to": "Latn"
+  },
+  "result": "Yevropa"
+ },
+ {
+  "fn": "convert",
+  "args": [
+   "Yevropa",
+   "uz"
+  ],
+  "kwargs": {
+   "to": "Cyrl"
+  },
+  "result": "Европа"
+ },
+ {
+  "fn": "convert",
+  "args": [
+   "yoʻl",
+   "uz"
+  ],
+  "kwargs": {
+   "to": "Cyrl"
+  },
+  "result": "йўл"
+ },
+ {
+  "fn": "convert",
+  "args": [
+   "ekran",
+   "uz"
+  ],
+  "kwargs": {
+   "to": "Cyrl"
+  },
+  "result": "экран"
+ },
+ {
+  "fn": "convert",
+  "args": [
+   "yer",
+   "uz"
+  ],
+  "kwargs": {
+   "to": "Cyrl"
+  },
+  "result": "ер"
+ },
+ {
+  "fn": "convert",
+  "args": [
+   "Isʼhoq",
+   "uz"
+  ],
+  "kwargs": {
+   "to": "Cyrl"
+  },
+  "result": "Исҳоқ"
+ },
+ {
+  "fn": "convert",
+  "args": [
+   "SHAHAR",
+   "uz"
+  ],
+  "kwargs": {
+   "to": "Cyrl"
+  },
+  "result": "ШАҲАР"
+ },
+ {
+  "fn": "convert",
+  "args": [
+   "Gʻalaba",
+   "uz"
+  ],
+  "kwargs": {
+   "to": "Cyrl"
+  },
+  "result": "Ғалаба"
+ },
+ {
+  "fn": "convert",
+  "args": [
+   "Ғалаба",
+   "uz"
+  ],
+  "kwargs": {
+   "to": "Latn"
+  },
+  "result": "Gʻalaba"
+ },
+ {
+  "fn": "convert",
+  "args": [
+   "ер",
+   "uz"
+  ],
+  "kwargs": {
+   "to": "Latn"
+  },
+  "result": "yer"
+ },
+ {
+  "fn": "convert",
+  "args": [
+   "объект",
+   "uz"
+  ],
+  "kwargs": {
+   "to": "Latn"
+  },
+  "result": "obʼyekt"
+ },
+ {
+  "fn": "convert",
+  "args": [
+   "цирк",
+   "uz"
+  ],
+  "kwargs": {
+   "to": "Latn"
+  },
+  "result": "sirk"
+ },
+ {
+  "fn": "convert",
+  "args": [
+   "концерт",
+   "uz"
+  ],
+  "kwargs": {
+   "to": "Latn"
+  },
+  "result": "konsert"
+ },
+ {
+  "fn": "convert",
+  "args": [
+   "милиция",
+   "uz"
+  ],
+  "kwargs": {
+   "to": "Latn"
+  },
+  "result": "militsiya"
+ },
+ {
+  "fn": "convert",
+  "args": [
+   "ШАҲАР",
+   "uz"
+  ],
+  "kwargs": {
+   "to": "Latn"
+  },
+  "result": "SHAHAR"
+ },
+ {
+  "fn": "convert",
+  "args": [
+   "Шаҳар",
+   "uz"
+  ],
+  "kwargs": {
+   "to": "Latn"
+  },
+  "result": "Shahar"
+ },
+ {
+  "fn": "normalize",
+  "args": [
+   "Соли 2026 дар Душанбе 1 200 000 нафар зиндагӣ мекунанд.",
+   "tg"
+  ],
+  "kwargs": {},
+  "result": "Соли ду ҳазору бисту шаш дар Душанбе як миллиону дусад ҳазор нафар зиндагӣ мекунанд."
+ },
+ {
+  "fn": "normalize",
+  "args": [
+   "Нарх: 3,75 смн; тахфиф 12,5%.",
+   "tg"
+  ],
+  "kwargs": {},
+  "result": "Нарх: се сомониву ҳафтоду панҷ дирам; тахфиф дувоздаҳ бутуну панҷ даҳум фоиз."
+ },
+ {
+  "fn": "normalize",
+  "args": [
+   "Вохӯрӣ 01.09.2026 соати 08:00 аст.",
+   "tg"
+  ],
+  "kwargs": {},
+  "result": "Вохӯрӣ якуми сентябри соли ду ҳазору бисту шаш соати ҳашт аст."
+ },
+ {
+  "fn": "normalize",
+  "args": [
+   "€15 ва £3.5 ва 100$",
+   "tg"
+  ],
+  "kwargs": {},
+  "result": "понздаҳ евро ва се фунту панҷоҳ пенс ва сад доллар"
+ },
+ {
+  "fn": "normalize",
+  "args": [
+   "در سال ۱۳۹۹ حدود ۸۵٬۰۰۰٬۰۰۰ نفر",
+   "fa"
+  ],
+  "kwargs": {},
+  "result": "در سال هزار و سیصد و نود و نه حدود هشتاد و پنج میلیون نفر"
+ },
+ {
+  "fn": "normalize",
+  "args": [
+   "کابل ۱۴۰۳/۰۵/۲۸",
+   "fa-AF"
+  ],
+  "kwargs": {},
+  "result": "کابل بیست و هشتم اسد هزار و چهارصد و سه"
+ },
+ {
+  "fn": "normalize",
+  "args": [
+   "Narxi 1 250 000 so'm, 3-sentabr, soat 18:00 da",
+   "uz"
+  ],
+  "kwargs": {},
+  "result": "Narxi bir million ikki yuz ellik ming soʻm, uchinchi sentabr, soat oʻn sakkiz da"
+ },
+ {
+  "fn": "convert",
+  "args": [
+   "Тоҷикистон дар Осиёи Марказӣ ҷойгир аст. Пойтахти он шаҳри Душанбе мебошад.",
+   "tg"
+  ],
+  "kwargs": {
+   "to": "Arab"
+  },
+  "result": "تاجیکستان در آسیای مرکزی جایگیر است. پایتخت آن شهر دوشنبه می‌باشد."
+ },
+ {
+  "fn": "convert",
+  "args": [
+   "Модар ва падари ман дар деҳа зиндагӣ мекунанд.",
+   "tg"
+  ],
+  "kwargs": {
+   "to": "Arab"
+  },
+  "result": "مادر و پدر من در ده زندگی می‌کنند."
+ },
+ {
+  "fn": "convert",
+  "args": [
+   "همه افراد بشر آزاد به دنیا می‌آیند",
+   "tg"
+  ],
+  "kwargs": {
+   "to": "Cyrl"
+  },
+  "result": "ҳама афрод башр озод ба дунё меоинд"
+ },
+ {
+  "fn": "convert",
+  "args": [
+   "Barcha odamlar erkin, qadr-qimmat va huquqlarda teng boʻlib tugʻiladilar.",
+   "uz"
+  ],
+  "kwargs": {
+   "to": "Cyrl"
+  },
+  "result": "Барча одамлар эркин, қадр-қиммат ва ҳуқуқларда тенг бўлиб туғиладилар."
+ },
+ {
+  "fn": "convert",
+  "args": [
+   "Шеър, ЎЗБЕКИСТОН, Ёшлик, ЮНЕСКО, Ценз, Қуёш",
+   "uz"
+  ],
+  "kwargs": {
+   "to": "Latn"
+  },
+  "result": "Sheʼr, OʻZBEKISTON, Yoshlik, YUNESKO, Senz, Quyosh"
+ },
+ {
+  "fn": "convert",
+  "args": [
+   "ҲАМАИ ОДАМОН ҶАҲОН",
+   "tg"
+  ],
+  "kwargs": {
+   "to": "Latn"
+  },
+  "result": "HAMAI ODAMON JAHON"
+ }
+]

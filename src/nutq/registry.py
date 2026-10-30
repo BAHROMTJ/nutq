@@ -69,6 +69,7 @@ _loaded = False
 
 def register(language: Language) -> Language:
     """Add ``language`` to the registry (replacing one with the same code)."""
+    _load()  # load the built-ins first, so ``language`` can replace one of them
     key = language.code.lower()
     _LANGUAGES[key] = language
     for alias in (language.code,) + language.aliases:

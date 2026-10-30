@@ -1,0 +1,59 @@
+{
+  "name": "nutq",
+  "version": "0.1.0",
+  "description": "Script conversion and speech-oriented text normalization for Tajik, Persian, Dari and Uzbek",
+  "type": "module",
+  "main": "./src/index.js",
+  "types": "./index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./index.d.ts",
+      "default": "./src/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "bin": {
+    "nutq": "bin/nutq.js"
+  },
+  "files": [
+    "src/",
+    "bin/",
+    "index.d.ts",
+    "README.md",
+    "LICENSE"
+  ],
+  "sideEffects": false,
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "test": "node --test",
+    "build:data": "node scripts/build-data.mjs"
+  },
+  "keywords": [
+    "tajik",
+    "persian",
+    "farsi",
+    "dari",
+    "uzbek",
+    "transliteration",
+    "cyrillic",
+    "latin",
+    "perso-arabic",
+    "text-normalization",
+    "tts",
+    "number-to-words",
+    "nlp"
+  ],
+  "author": "Bahrom Sharifzoda",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BAHROMTJ/nutq.git",
+    "directory": "js"
+  },
+  "homepage": "https://github.com/BAHROMTJ/nutq/tree/main/js#readme",
+  "bugs": {
+    "url": "https://github.com/BAHROMTJ/nutq/issues"
+  }
+}

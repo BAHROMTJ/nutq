@@ -26,6 +26,19 @@ class RegistryTest(unittest.TestCase):
         with self.assertRaises(nutq.UnsupportedError):
             nutq.convert("салом", "uz", to="Arab")
 
+    def test_register_replaces_builtin(self):
+        builtin = nutq.get_language("uz")
+        custom = nutq.Language(
+            code="uz", name="Uzbek (custom)", native_name="oʻzbekcha",
+            default_script="Latn", scripts=("Latn",),
+            cardinal=str, ordinal=str, normalize=str.upper, clean=str.strip,
+        )
+        try:
+            nutq.register(custom)
+            self.assertEqual(nutq.normalize("abc", "uz"), "ABC")
+        finally:
+            nutq.register(builtin)
+
     def test_register_custom_language(self):
         upper = nutq.Language(
             code="x-test", name="Test", native_name="test",

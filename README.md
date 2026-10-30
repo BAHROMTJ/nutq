@@ -60,11 +60,19 @@ Language codes follow BCP-47 / ISO 639 (`tg`, `fa`, `fa-AF`, `prs`, `uz`, ...). 
 
 ```bash
 nutq convert --lang tg --to Arab "Забони тоҷикӣ"
-nutq normalize --lang uz "Narxi 25 $, 15% chegirma"
+nutq normalize --lang uz 'Narxi 25 $, 15% chegirma'
 nutq number --lang fa --ordinal 23
 echo "O'zbekiston" | nutq convert -l uz -t Cyrl
 nutq languages
 ```
+
+## JavaScript, AI assistants and a web demo
+
+| | Where | Status |
+|---|---|---|
+| **JavaScript / TypeScript** (Node 18+ and browsers, zero dependencies) | [`js/`](js/) | same API as Python (`numberToWords` in camelCase); passes every test vector from the Python suite; not yet on npm |
+| **MCP server** for Claude and other AI assistants | [`mcp/`](mcp/) | tools `convert_script`, `normalize_text`, `number_to_words`, `clean_text`, `list_languages`; not yet on PyPI |
+| **Web demo** (Hugging Face Space, Gradio) | [`demo/`](demo/) | ready to deploy |
 
 ## How Tajik → Perso-Arabic works
 

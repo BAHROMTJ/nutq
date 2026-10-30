@@ -1,11 +1,13 @@
 name: Publish to PyPI
 
+# Runs for GitHub releases tagged v*, e.g. v0.1.1 (mcp-v* releases publish nutq-mcp).
 on:
   release:
     types: [published]
 
 jobs:
   publish:
+    if: startsWith(github.event.release.tag_name, 'v')
     runs-on: ubuntu-latest
     environment: pypi
     permissions:
