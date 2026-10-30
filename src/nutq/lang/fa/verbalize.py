@@ -104,10 +104,16 @@ def make_verbalizer(variant: str) -> Verbalizer:
         date=date,
         time=_time,
         minus="منفی",
+        dot="نقطه",
+        comma="،",
         currency_symbols=CURRENCY_SYMBOLS,
+        units={"°C": "درجه", "°": "درجه"},
         abbreviations=ABBREVIATIONS,
         rules=[
             (re.compile(r"(?<!\w)(\d{4})/(\d{1,2})/(\d{1,2})(?!\w)"), solar_date),
+            # a day before a month name is an ordinal: ۲۲ بهمن -> بیست و دوم بهمن
+            (re.compile(r"(?<!\w)(\d{1,2})(?=\s+(?:" + "|".join(gregorian[1:] + solar[1:]) + r")(?!\w))"),
+             lambda m: to_ordinal(int(m.group(1)))),
             # ۵ام, ۲۱م -> ordinal
             (re.compile(r"(?<!\w)(\d+)‌?(?:ام|م)(?!\w)"), lambda m: to_ordinal(int(m.group(1)))),
         ],

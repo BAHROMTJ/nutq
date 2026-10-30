@@ -85,6 +85,8 @@ class NormalizeTest(unittest.TestCase):
             "3-chi": "uchinchi",
             "soat 14:30": "soat oʻn toʻrt oʻttiz daqiqa",
             "AQSH": "Amerika Qoʻshma Shtatlari",
+            "1991 yil 31 avgust": "ming toʻqqiz yuz toʻqson birinchi yil oʻttiz birinchi avgust",
+            "+998 71 123 45 67": "toʻqqiz yuz toʻqson sakkiz, yetmish bir, yuz yigirma uch, qirq besh, oltmish yetti",
         })
 
     def test_cyrillic(self):
@@ -93,6 +95,8 @@ class NormalizeTest(unittest.TestCase):
             "5-синф": "бешинчи синф",
             "Сана: 12.03.2026": "Сана: икки минг йигирма олтинчи йил ўн иккинчи март",
             "АҚШ": "Америка Қўшма Штатлари",
+            "Ҳарорат -3°C": "Ҳарорат минус уч даража",
+            "1991 йил 31 августда": "минг тўққиз юз тўқсон биринчи йил ўттиз биринчи августда",
         })
 
 

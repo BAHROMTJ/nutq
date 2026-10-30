@@ -9,12 +9,14 @@ The steps run in a fixed order, and each one replaces digits with words, so
 later steps never see text an earlier step already handled:
 
 1. language-specific rules (ordinal suffixes like "5-ум", "12-mart")
-2. dates (DD.MM.YYYY, DD/MM/YYYY, YYYY-MM-DD)
-3. times (14:30)
-4. money ($25, 25 €, 100 смн)
-5. percentages (15%)
-6. negative numbers, decimals and integers (with space-separated thousands)
-7. abbreviations
+2. phone numbers (+992 93 123 45 67), read group by group
+3. dates (DD.MM.YYYY, DD/MM/YYYY, YYYY-MM-DD)
+4. version numbers (2.0.1)
+5. times (14:30)
+6. money ($25, 25 €, 100 смн)
+7. percentages (15%) and units after a number (-5°C)
+8. negative numbers, decimals and integers (with space-separated thousands)
+9. abbreviations
 """
 
 import re
@@ -34,6 +36,8 @@ _NUM = _INT + r"(?:[.,]\d+)?"
 
 _DATE_DMY = re.compile(r"(?<!\w)(\d{1,2})([./])(\d{1,2})\2(\d{4})(?!\w)")
 _DATE_ISO = re.compile(r"(?<!\w)(\d{4})-(\d{2})-(\d{2})(?!\w)")
+_PHONE = re.compile(r"(?<![\w+])\+(\d{1,3}(?:[ \-]\d{2,4}){2,})(?!\d)")
+_VERSION = re.compile(r"(?<![\w.])\d+(?:\.\d+){2,}(?![\w.])")
 _TIME = re.compile(r"(?<![\w:])([01]?\d|2[0-3]):([0-5]\d)(?![\w:])")
 _PERCENT = re.compile(r"(?<!\w)(" + _NUM + r")\s?%")
 _NUMBER = re.compile(r"(?:(?<!\w)([-−])(?=\d))?(?<!\w)(" + _INT + r")(?:([.,])(\d+))?(?!\d)")
@@ -74,7 +78,10 @@ class Verbalizer:
     date: Callable[[int, int, int], str]        # (day, month, year)
     time: Callable[[int, int], str]             # (hours, minutes)
     minus: str
+    dot: str = "."                              # 2.0.1 -> "two dot zero dot one"
+    comma: str = ","                            # pause between phone number groups
     currency_symbols: Dict[str, str] = field(default_factory=dict)
+    units: Dict[str, str] = field(default_factory=dict)  # symbol after a number -> word
     abbreviations: Dict[str, str] = field(default_factory=dict)
     rules: Sequence[Rule] = ()
     render: Callable[[str], str] = lambda words: words
@@ -89,6 +96,11 @@ class Verbalizer:
             )
         else:
             self._money = None
+        units = sorted(self.units, key=len, reverse=True)
+        self._unit = re.compile(
+            r"(?:(?<!\w)([-−])(?=\d))?(?<!\w)(" + _NUM + r")\s?("
+            + "|".join(re.escape(u) for u in units) + r")(?!\w)"
+        ) if units else None
         abbrs = sorted(self.abbreviations, key=len, reverse=True)
         self._abbr = re.compile(
             r"(?<!\w)(" + "|".join(re.escape(a) for a in abbrs) + r")(?!\w)"
@@ -123,6 +135,20 @@ class Verbalizer:
         if not _is_date(day, month):
             return m.group(0)
         return self._out(self.date(day, month, year), m)
+
+    def _phone(self, m: Match) -> str:
+        groups = re.split(r"[ \-]", m.group(1))
+        return self._out(f"{self.comma} ".join(self.cardinal(int(g)) for g in groups), m)
+
+    def _version(self, m: Match) -> str:
+        parts = m.group(0).split(".")
+        return self._out(f" {self.dot} ".join(self.cardinal(int(p)) for p in parts), m)
+
+    def _unit_sub(self, m: Match) -> str:
+        words = self.number(m.group(2))
+        if m.group(1):
+            words = self.minus + " " + words
+        return self._out(words + " " + self.units[m.group(3)], m)
 
     def _time(self, m: Match) -> str:
         words = self.time(int(m.group(1)), int(m.group(2)))
@@ -162,12 +188,16 @@ class Verbalizer:
         text = _THOUSANDS_SIGN.sub("", text).translate(_DIGITS)
         for pattern, handler in self.rules:
             text = pattern.sub(lambda m, h=handler: self._out(h(m), m), text)
+        text = _PHONE.sub(self._phone, text)
         text = _DATE_DMY.sub(self._date_dmy, text)
         text = _DATE_ISO.sub(self._date_iso, text)
+        text = _VERSION.sub(self._version, text)
         text = _TIME.sub(self._time, text)
         if self._money is not None:
             text = self._money.sub(self._money_sub, text)
         text = _PERCENT.sub(self._percent, text)
+        if self._unit is not None:
+            text = self._unit.sub(self._unit_sub, text)
         text = _NUMBER.sub(self._number, text)
         if self._abbr is not None:
             text = self._abbr.sub(self._abbreviation, text)

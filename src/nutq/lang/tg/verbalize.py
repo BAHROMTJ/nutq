@@ -83,7 +83,9 @@ verbalize = Verbalizer(
     date=_date,
     time=_time,
     minus="минус",
+    dot="нуқта",
     currency_symbols=CURRENCY_SYMBOLS,
+    units={"°C": "дараҷа", "°": "дараҷа"},
     abbreviations=ABBREVIATIONS,
     rules=[(_ORDINAL, lambda m: to_ordinal(int(m.group(1))) + m.group(2))],
 )

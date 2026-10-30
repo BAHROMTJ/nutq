@@ -58,11 +58,19 @@ _SUFFIXES = (
     ("ро", " را", 3),
     ("тарин", ZWNJ + "ترین", 3),  # comparative: калонтарин -> کلان‌ترین
     ("тар", ZWNJ + "تر", 3),      # ширинтар -> شیرین‌تر (дафтар is in the word list)
+    ("ён", "یان", 3),  # plural after a vowel: донишҷӯён -> دانشجویان
     ("и", "", 3),  # izafat; not written after a consonant
 )
 
+# Verb and word stems whose spelling the letter rules can't guess; matched
+# at the start of a word, also after the negative "на-" (нахонд -> نخواند).
+_STEMS = (
+    ("хонд", "خواند"), ("хоҳ", "خواه"), ("хост", "خواست"), ("хоб", "خواب"),
+    ("кун", "کن"), ("шуд", "شد"), ("гуфт", "گفت"),
+)
+
 # Present-tense verbs: ме-/наме- + stem + personal ending (мешавад -> می‌شود).
-_VERB = re.compile(r"(на)?ме(?![ҳъ])(\w{2,}(?:ам|ӣ|ад|ем|ед|анд))")
+_VERB = re.compile(r"(на)?ме(?![ҳъ])(\w+(?:ам|ӣ|ад|ем|ед|анд|ям|яд|янд))")
 
 _PUNCT = str.maketrans({",": "،", "?": "؟", ";": "؛", "%": "٪"})
 _PUNCT_BACK = str.maketrans({"،": ",", "؟": "?", "؛": ";", "٪": "%", "‌": ""})
@@ -71,6 +79,7 @@ _TO_LATIN_DIGITS = str.maketrans("۰۱۲۳۴۵۶۷۸۹٠١٢٣٤٥٦٧٨٩", "01
 
 _CYR_WORD = re.compile(r"[Ѐ-ԯ]+")
 _ARAB_WORD = re.compile(r"[ء-غف-ْٱ-ۓ‌]+")
+_DIGIT_ORDINAL = re.compile(r"(\d)-?(?:ум|юм)и?(?![Ѐ-ԯ])")  # 21-ум -> ۲۱م
 _DECIMAL = re.compile(r"(?<=\d)[.,](?=\d)")
 
 
@@ -89,10 +98,24 @@ def _word_list() -> Tuple[Dict[str, str], Dict[str, str]]:
     return to_arabic, to_cyrillic
 
 
+_IOTATED = {"я": "а", "ё": "о", "ю": "у"}
+
+
 def _rules(word: str) -> str:
     verb = _VERB.fullmatch(word)
     if verb:
         return ("نمی" if verb.group(1) else "می") + ZWNJ + _rules(verb.group(2))
+    for stem, arabic in _STEMS:
+        for lead, lead_arabic in (("", ""), ("на", "ن")):
+            if word.startswith(lead + stem):
+                plain = _letters(lead + stem)
+                spelled = _letters(word)
+                if spelled.startswith(plain):
+                    return lead_arabic + arabic + spelled[len(plain):]
+    return _letters(word)
+
+
+def _letters(word: str) -> str:
     out = []
     last = len(word) - 1
     for i, char in enumerate(word):
@@ -100,8 +123,9 @@ def _rules(word: str) -> str:
             continue  # double consonants are written once (миллат -> ملت)
         if char in _VOWEL_FORMS:
             initial, medial, final = _VOWEL_FORMS[char]
-            if char == "я" and i > 0 and word[i - 1] in "иӣ":
-                initial, medial, final = _VOWEL_FORMS["а"]  # Русия -> روسیه
+            if char in _IOTATED and i > 0 and word[i - 1] in "иӣ":
+                # the "й" is already in the и: Русия -> روسیه, адабиёт -> ادبیات
+                initial, medial, final = _VOWEL_FORMS[_IOTATED[char]]
             if i == 0:
                 out.append(initial)
             elif i == last:
@@ -137,19 +161,53 @@ def _number_with_conjunction(lower: str):
     return None
 
 
+def _noun_with_conjunction(lower: str, words: Dict[str, str]):
+    """Return the stem of a word ending in the linking "-у"/"-ю" (шаъну -> шаън).
+
+    "-у" follows a consonant and "-ю" a vowel. Short words (ту, ду, бӯ) and
+    words where the ending is part of the stem (тарозу) are in the word list.
+    """
+    stem, last = lower[:-1], lower[-1:]
+    if not stem or last not in ("у", "ю"):
+        return None
+    after_vowel = stem[-1] in _VOWELS
+    if (last == "у") == after_vowel:
+        return None
+    if stem in words or len(stem) >= (3 if after_vowel else 4):
+        return stem
+    return None
+
+
+def _ordinal(lower: str):
+    """Return the number word of an ordinal (якум -> як, сиюм -> сӣ)."""
+    if lower.endswith("июм") and lower[:-3] + "ӣ" in _NUMBER_WORDS:
+        return lower[:-3] + "ӣ"
+    if lower[-2:] in ("ум", "юм") and lower[:-2] in _NUMBER_WORDS:
+        return lower[:-2]
+    return None
+
+
 def word_to_arabic(word: str) -> str:
     """Convert one Cyrillic word (any case) to Perso-Arabic script."""
     words, _ = _word_list()
     lower = word.lower()
     if lower in words:
         return words[lower]
-    number = _number_with_conjunction(lower)
+    number = _number_with_conjunction(lower) or _noun_with_conjunction(lower, words)
     if number:
         return word_to_arabic(number) + " و"
+    number = _ordinal(lower)
+    if number:
+        if number == "се":
+            return "سوم"
+        arabic = word_to_arabic(number)
+        return arabic + (ZWNJ + "ام" if arabic.endswith("ی") else "م")
     for suffix, arabic, min_stem in _SUFFIXES:
         stem = lower[: -len(suffix)]
         if lower.endswith(suffix) and len(stem) >= min_stem:
-            return _attach(words.get(stem) or _rules(stem), suffix, arabic)
+            if suffix == "и" and stem.endswith("и"):
+                stem = stem[:-1] + "ӣ"  # давлатии = давлатӣ + izafat
+            return _attach(word_to_arabic(stem), suffix, arabic)
     return _rules(lower)
 
 
@@ -159,6 +217,7 @@ def to_arabic(text: str) -> str:
     >>> to_arabic("Забони тоҷикӣ")
     'زبان تاجیکی'
     """
+    text = _DIGIT_ORDINAL.sub(r"\1م", text)
     text = _CYR_WORD.sub(lambda m: word_to_arabic(m.group(0)), text)
     text = _DECIMAL.sub("٫", text)
     return text.translate(_PUNCT).translate(_TO_PERSIAN_DIGITS)
@@ -215,10 +274,14 @@ def word_to_cyrillic(word: str) -> str:
     _, words = _word_list()
     if word in words:
         return words[word]
+    for prefix, cyrillic in (("نمی" + ZWNJ, "наме"), ("می" + ZWNJ, "ме")):
+        if word.startswith(prefix) and len(word) > len(prefix):
+            return cyrillic + word_to_cyrillic(word[len(prefix):])
     for arabic, cyrillic in ((ZWNJ + "ها", "ҳо"), ("ها", "ҳо"), (ZWNJ + "های", "ҳои")):
         if word.endswith(arabic) and len(word) > len(arabic):
             return word_to_cyrillic(word[: -len(arabic)]) + cyrillic
-    return _rules_back(word.replace(ZWNJ, ""))
+    # خوا is read "хо" (خواندن -> хондан)
+    return _rules_back(word.replace(ZWNJ, "").replace("خوا", "خا"))
 
 
 def to_cyrillic(text: str) -> str:

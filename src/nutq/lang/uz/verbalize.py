@@ -81,6 +81,19 @@ _CYRILLIC_RULES = [
 ]
 
 
+def _before_date_word(words):
+    """A number before "yil" or a month name is an ordinal even without a hyphen."""
+    return (
+        re.compile(r"(?<!\w)(\d+)(?=\s+(?:" + "|".join(words) + r"))", re.IGNORECASE),
+        lambda m: to_ordinal(int(m.group(1))),
+    )
+
+
+_DATE_WORDS = ["yil"] + MONTHS[1:]
+_LATIN_RULES.append(_before_date_word(_DATE_WORDS))
+_CYRILLIC_RULES.append(_before_date_word([to_cyrillic(w) for w in _DATE_WORDS]))
+
+
 def _make(script: str) -> Verbalizer:
     cyrillic = script == "Cyrl"
     symbols = dict(CURRENCY_SYMBOLS)
@@ -97,7 +110,9 @@ def _make(script: str) -> Verbalizer:
         date=_date,
         time=_time,
         minus="minus",
+        dot="nuqta",
         currency_symbols=symbols,
+        units={"°C": "daraja", "°": "daraja"},
         abbreviations=abbreviations,
         rules=_CYRILLIC_RULES if cyrillic else _LATIN_RULES,
         render=to_cyrillic if cyrillic else (lambda words: words),

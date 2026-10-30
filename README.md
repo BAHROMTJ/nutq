@@ -11,7 +11,7 @@ More than 150 million people speak these languages, and many of them write them 
 | Scripts | Cyrillic · Latin · Perso-Arabic | Perso-Arabic | Perso-Arabic | Latin · Cyrillic |
 | Script conversion | Cyrl ↔ Latn, Cyrl → Arab, Arab → Cyrl *(experimental)* | via `tg` | via `tg` | Cyrl ↔ Latn |
 | Numbers → words | cardinal, ordinal | cardinal, ordinal | cardinal, ordinal | cardinal, ordinal |
-| Normalization for speech | numbers, decimals, %, money, dates, times, abbreviations | + Solar Hijri dates | + Afghan month names | Latin and Cyrillic |
+| Normalization for speech | numbers, decimals, %, money, dates, times, phone and version numbers, °C, abbreviations | + Solar Hijri dates | + Afghan month names | Latin and Cyrillic |
 | Character cleanup | look-alike letters | ي/ك → ی/ک, digits, ZWNJ | same as `fa` | apostrophes oʻ gʻ ʼ |
 
 Status: **beta**. Each rule is tested, but native speakers still need to review many of them. See [Linguistic review](#linguistic-review).
@@ -71,7 +71,7 @@ nutq languages
 Tajik Cyrillic writes every vowel. Persian script leaves out short vowels and has several letters for one sound (с = س ص ث). A rule-only converter therefore cannot be exact. `nutq` works in three steps:
 
 1. **Word list** — [`lang/tg/data/arabic_words.tsv`](src/nutq/lang/tg/data/arabic_words.tsv) holds the spellings rules can't guess (китоб → کتاب, илм → علم).
-2. **Suffixes** — plural -ҳо → ‌ها, object -ро → را, izafat -и, and verb prefixes ме-/наме- → می‌/نمی‌.
+2. **Suffixes and stems** — plural -ҳо/-ён, object -ро → را, izafat -и, comparative -тар/-тарин, the linking -у → و, verb prefixes ме-/наме- → می‌/نمی‌, and stems like хонд → خواند, кун → کن.
 3. **Letter rules** for everything else. They are correct for many common words (нон → نان, Самарқанд → سمرقند).
 
 Arabic → Cyrillic is **experimental**. Without a dictionary, an unvowelled word can only be read approximately.

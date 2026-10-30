@@ -7,8 +7,9 @@ The goal: become the standard open tool for script conversion and speech-ready t
 - [x] Tajik: Cyrillic ↔ Latin, Cyrillic → Perso-Arabic, Perso-Arabic → Cyrillic (experimental)
 - [x] Persian and Dari: numbers, normalization (incl. Solar Hijri dates), character cleanup
 - [x] Uzbek: Cyrillic ↔ Latin (1995 standard), numbers, normalization in both scripts
-- [x] Plugin registry with entry points; CLI; 66 tests; Python 3.9+
-- [ ] Native-speaker review of the forms marked `verify` (Tajik/Persian: Bahrom; Uzbek: needs a reviewer)
+- [x] Plugin registry with entry points; CLI; 73 tests; Python 3.9+
+- [x] Tajik dates and times confirmed by a native speaker
+- [ ] Native-speaker review of the remaining forms marked `verify` (Tajik/Persian: Bahrom; Uzbek: needs a reviewer)
 - [ ] Publish to GitHub and PyPI (needs the maintainer's OK)
 - [ ] `tojiki` 0.2 becomes a thin wrapper over `nutq` so its existing users get the new features
 
@@ -17,7 +18,7 @@ The goal: become the standard open tool for script conversion and speech-ready t
 - [ ] Grow the Tajik → Perso-Arabic word list to the ~2,000 most frequent words (from a frequency list; reviewed)
 - [ ] Measure accuracy on a parallel Tajik/Persian test set and publish the number
 - [ ] Number words → digits (the reverse of `number_to_words`) for ASR output
-- [ ] Ordinals and fractions in more contexts; phone numbers; units (°C, км/с)
+- [ ] Fractions (½, 3/4), more units (км/соат, м²), local phone numbers without "+"
 - [ ] Restore Tajik letters typed on a Russian keyboard (х → ҳ, к → қ) using the word list
 
 ## 0.3 — more languages (each needs a native-speaker co-maintainer)

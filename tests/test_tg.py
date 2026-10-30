@@ -100,9 +100,48 @@ class ArabicTest(unittest.TestCase):
         self.assertEqual(self.arabic("дафтар"), "دفتر")
         self.assertEqual(self.arabic("духтар"), "دختر")
 
+    def test_linking_conjunction(self):
+        self.assertEqual(self.arabic("шаъну шараф"), "شأن و شرف")
+        self.assertEqual(self.arabic("форсу тоҷик"), "فارس و تاجیک")
+        self.assertEqual(self.arabic("дунёю охират"), "دنیا و آخرت")
+        self.assertEqual(self.arabic("ту ва ду"), "تو و دو")
+        self.assertEqual(self.arabic("тарозу"), "ترازو")
+
+    def test_iotated_vowels_after_i(self):
+        self.assertEqual(self.arabic("Русия"), "روسیه")
+        self.assertEqual(self.arabic("адабиёт"), "ادبیات")
+        self.assertEqual(self.arabic("Осиё"), "آسیا")
+
+    def test_sentences(self):
+        cases = {
+            "Забони давлатии Ҷумҳурии Тоҷикистон забони тоҷикӣ мебошад.":
+                "زبان دولتی جمهوری تاجیکستان زبان تاجیکی می\u200cباشد.",
+            "Ман китобро хондам, вале ӯ нахонд.": "من کتاب را خواندم، ولی او نخواند.",
+            "Ин ҷо донишҷӯён таҳсил мекунанд.": "این جا دانشجویان تحصیل می\u200cکنند.",
+            "Тоҷикистон дар Осиёи Марказӣ ҷойгир аст.": "تاجیکستان در آسیای مرکزی جایگیر است.",
+            "Устод Рӯдакӣ падари шеъри форсӣ ҳисоб мешавад.":
+                "استاد رودکی پدر شعر فارسی حساب می\u200cشود.",
+            "Имрӯз ҳаво гарм аст ва мо ба боғ меравем.": "امروز هوا گرم است و ما به باغ می\u200cرویم.",
+        }
+        for cyrillic, arabic in cases.items():
+            with self.subTest(text=cyrillic):
+                self.assertEqual(self.arabic(cyrillic), arabic)
+
+    def test_number_words(self):
+        self.assertEqual(self.arabic("се"), "سه")
+        self.assertEqual(self.arabic("чилу ду"), "چهل و دو")
+        self.assertEqual(self.arabic("сеюм"), "سوم")
+        self.assertEqual(self.arabic("сиюм"), "سی\u200cام")
+        self.assertEqual(self.arabic("дувоздаҳуми марти соли ду ҳазору бисту шаш, соати чордаҳу сӣ"),
+                         "دوازدهم مارس سال دو هزار و بیست و شش، ساعت چهارده و سی")
+
+    def test_digit_ordinals(self):
+        self.assertEqual(self.arabic("асри 21-ум"), "عصر ۲۱م")
+
     def test_verbs(self):
         self.assertEqual(self.arabic("мешавад"), "می‌شود")
         self.assertEqual(self.arabic("намешавам"), "نمی\u200cشوم")
+        self.assertEqual(self.arabic("меоянд"), "می\u200cآیند")
         self.assertEqual(self.arabic("мева"), "میوه")  # not a verb
 
     def test_punctuation_and_digits(self):
@@ -118,6 +157,9 @@ class ArabicTest(unittest.TestCase):
         self.assertEqual(cyrillic("کتاب‌ها"), "китобҳо")
         self.assertEqual(cyrillic("آب و نان"), "об ва нон")
         self.assertEqual(cyrillic("سلام، ۲۰۲۶"), "салом, 2026")
+        self.assertEqual(cyrillic("می\u200cآیند"), "меоинд")
+        self.assertTrue(cyrillic("نمی\u200cدانم").startswith("наме"))
+        self.assertEqual(cyrillic("خواب"), "хоб")
 
 
 class CleanTest(unittest.TestCase):
@@ -167,6 +209,14 @@ class NormalizeTest(unittest.TestCase):
     def test_abbreviations(self):
         self.check({"ҶТ": "Ҷумҳурии Тоҷикистон", "5 млн": "панҷ миллион",
                     "китобҳо ва ғ.": "китобҳо ва ғайра"})
+
+    def test_phone_version_units(self):
+        self.check({
+            "+992 93 123 45 67": "нӯҳсаду наваду ду, наваду се, саду бисту се, чилу панҷ, шасту ҳафт",
+            "Версияи 2.0.1": "Версияи ду нуқта сифр нуқта як",
+            "-5°C": "минус панҷ дараҷа",
+            "30 °": "сӣ дараҷа",
+        })
 
     def test_cleans_first(self):
         self.assertEqual(nutq.normalize("Тoҷик 2", "tg"), "Тоҷик ду")
