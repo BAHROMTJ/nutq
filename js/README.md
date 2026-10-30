@@ -15,13 +15,13 @@ identical output.
 ## Install
 
 ```sh
-npm install nutq
+npm install @bahrom99/nutq
 ```
 
 ## Usage
 
 ```js
-import { convert, normalize, clean, numberToWords } from "nutq";
+import { convert, normalize, clean, numberToWords } from "@bahrom99/nutq";
 ```
 
 ### Tajik (`tg`)
@@ -90,7 +90,7 @@ Errors:
 ### Custom languages
 
 ```js
-import { register, normalize } from "nutq";
+import { register, normalize } from "@bahrom99/nutq";
 
 register({
   code: "x-demo",
@@ -110,13 +110,13 @@ normalize("abc", "x-demo"); // "ABC"
 ## Command line
 
 ```sh
-npx nutq convert --lang tg --to Latn "Душанбе"     # Dushanbe
-echo "Душанбе" | npx nutq convert -l tg -t Arab    # دوشنبه
-npx nutq normalize -l fa "۱۵٪"                     # پانزده درصد
-npx nutq clean -l tg "Тoҷик"                       # Тоҷик
-npx nutq number -l uz --ordinal 2                  # ikkinchi
-npx nutq number -l tg --script Arab 21             # بیست و یک
-npx nutq languages
+npx @bahrom99/nutq convert --lang tg --to Latn "Душанбе"     # Dushanbe
+echo "Душанбе" | npx @bahrom99/nutq convert -l tg -t Arab    # دوشنبه
+npx @bahrom99/nutq normalize -l fa "۱۵٪"                     # پانزده درصد
+npx @bahrom99/nutq clean -l tg "Тoҷик"                       # Тоҷик
+npx @bahrom99/nutq number -l uz --ordinal 2                  # ikkinchi
+npx @bahrom99/nutq number -l tg --script Arab 21             # بیست و یک
+npx @bahrom99/nutq languages
 ```
 
 Text is read from standard input when no text arguments are given.

@@ -1,5 +1,5 @@
 {
-  "name": "nutq",
+  "name": "@bahrom99/nutq",
   "version": "0.1.0",
   "description": "Script conversion and speech-oriented text normalization for Tajik, Persian, Dari and Uzbek",
   "type": "module",
