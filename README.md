@@ -4,6 +4,8 @@
 
 **Script conversion and text normalization for Tajik, Persian, Dari and Uzbek** — in pure Python, with no dependencies.
 
+**[Try it in your browser →](https://huggingface.co/spaces/bahrom99/nutq)**
+
 *nutq* (нутқ · نطق · nutq) means "speech" in all three languages.
 
 More than 150 million people speak these languages, and many of them write them in more than one script. Text-to-speech systems, chat bots, search engines and language models need the same text in a consistent form and the numbers spelled out, and there is little open tooling for that. `nutq` gives you one small, tested API for both jobs, and other languages can be added as plugins.
@@ -72,7 +74,8 @@ nutq languages
 |---|---|---|
 | **JavaScript / TypeScript** (Node 18+ and browsers, zero dependencies) | [`js/`](js/) | same API as Python (`numberToWords` in camelCase); passes every test vector from the Python suite; not yet on npm |
 | **MCP server** for Claude and other AI assistants | [`mcp/`](mcp/) | tools `convert_script`, `normalize_text`, `number_to_words`, `clean_text`, `list_languages`; not yet on PyPI |
-| **Web demo** (Hugging Face Space, Gradio) | [`demo/`](demo/) | ready to deploy |
+| **Web demo** — [try it online](https://huggingface.co/spaces/bahrom99/nutq) | [`web/`](web/) | static page that runs the JS port in your browser |
+| Gradio demo (needs a paid Hugging Face Space or runs locally) | [`demo/`](demo/) | `python demo/app.py` |
 
 ## How Tajik → Perso-Arabic works
 

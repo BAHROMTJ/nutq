@@ -35,8 +35,8 @@ The goal: become the standard open tool for script conversion and speech-ready t
 - [ ] Publish the JS port to npm as `nutq` (name is free; needs the maintainer's OK and an npm account)
 - [x] **MCP server** in [`mcp/`](mcp/) (`nutq-mcp`): `convert_script`, `normalize_text`, `number_to_words`, `clean_text`, `list_languages`
 - [ ] Publish `nutq-mcp` to PyPI (a second trusted publisher) and list it in MCP registries
-- [x] **Hugging Face Space** in [`demo/`](demo/): Gradio app with convert, normalize and numbers tabs
-- [ ] Deploy the Space under the maintainer's Hugging Face account; later, a "suggest a fix" button that collects corrections from native speakers
+- [x] **Hugging Face Space**: [bahrom99/nutq](https://huggingface.co/spaces/bahrom99/nutq), a static page in [`web/`](web/) that runs the JS port in the browser (free hosting); a Gradio version is in [`demo/`](demo/)
+- [ ] A "suggest a fix" button that collects corrections from native speakers
 - [ ] Integrations: a text-normalization front end for open TTS models (Piper, Coqui, MMS) for Tajik and Uzbek; a spaCy / Hugging Face `tokenizers` pre-normalizer.
 
 ## Growing the community

@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>nutq — Tajik, Persian, Dari, Uzbek</title>
+<meta name="description" content="Script conversion and speech-ready text normalization for Tajik, Persian, Dari and Uzbek. Runs entirely in your browser.">
+<style>
+  :root {
+    --bg: #f7f6f2; --panel: #ffffff; --ink: #1d1d1b; --muted: #6b6a64;
+    --line: #e2e0d8; --accent: #0f7b5f; --accent-ink: #ffffff; --chip: #eef3ef;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #141513; --panel: #1d1f1c; --ink: #ecebe6; --muted: #a3a29b;
+      --line: #33352f; --accent: #3fbf96; --accent-ink: #0d1411; --chip: #23302a;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--ink);
+    font: 16px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans", "Noto Naskh Arabic", sans-serif;
+  }
+  main { max-width: 820px; margin: 0 auto; padding: 32px 16px 48px; }
+  h1 { font-size: 28px; margin: 0 0 4px; letter-spacing: -0.01em; }
+  h1 span { color: var(--muted); font-weight: 400; }
+  .lead { color: var(--muted); margin: 0 0 24px; }
+  .lead a { color: var(--accent); }
+  .tabs { display: flex; gap: 4px; border-bottom: 1px solid var(--line); margin-bottom: 16px; overflow-x: auto; }
+  .tabs button {
+    border: 0; background: none; color: var(--muted); font: inherit; padding: 10px 14px;
+    cursor: pointer; border-bottom: 2px solid transparent; white-space: nowrap;
+  }
+  .tabs button[aria-selected="true"] { color: var(--ink); border-bottom-color: var(--accent); font-weight: 600; }
+  .panel { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 16px; }
+  .row { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 12px; }
+  label { display: flex; flex-direction: column; gap: 4px; font-size: 13px; color: var(--muted); flex: 1 1 180px; }
+  select, textarea, input[type=number] {
+    font: inherit; color: var(--ink); background: var(--bg); border: 1px solid var(--line);
+    border-radius: 8px; padding: 8px 10px; width: 100%;
+  }
+  textarea { min-height: 96px; resize: vertical; font-size: 17px; }
+  .check { flex-direction: row; align-items: center; gap: 8px; flex: 0 0 auto; align-self: end; padding-bottom: 10px; }
+  .out {
+    margin-top: 12px; padding: 12px; min-height: 64px; border-radius: 8px; background: var(--chip);
+    font-size: 18px; white-space: pre-wrap; overflow-wrap: anywhere; position: relative;
+  }
+  .out.error { background: #fbe9e7; color: #8a2c1b; }
+  @media (prefers-color-scheme: dark) { .out.error { background: #3a1f1a; color: #ffb4a3; } }
+  .copy {
+    float: right; margin: -4px -4px 4px 8px; font: 13px system-ui; border: 1px solid var(--line);
+    background: var(--panel); color: var(--muted); border-radius: 6px; padding: 2px 8px; cursor: pointer;
+  }
+  .examples { margin-top: 16px; display: flex; flex-wrap: wrap; gap: 8px; }
+  .examples button {
+    font: 14px system-ui; border: 1px solid var(--line); background: var(--panel); color: var(--ink);
+    border-radius: 999px; padding: 4px 12px; cursor: pointer; max-width: 100%; overflow: hidden; text-overflow: ellipsis;
+  }
+  .note { color: var(--muted); font-size: 14px; margin: 12px 0 0; }
+  footer { color: var(--muted); font-size: 14px; margin-top: 28px; }
+  footer a { color: var(--accent); }
+  code { font-size: 14px; }
+</style>
+</head>
+<body>
+<main>
+  <h1>nutq <span>· нутқ · نطق</span></h1>
+  <p class="lead">
+    Script conversion and speech-ready text for <strong>Tajik, Persian, Dari and Uzbek</strong>.
+    Everything runs in your browser — nothing is sent anywhere.
+    Табдили хат ва тайёр кардани матн барои нутқ (TTS) ва зеҳни сунъӣ.<br>
+    <a href="https://github.com/BAHROMTJ/nutq">GitHub</a> · <code>pip install nutq</code>
+  </p>
+
+  <div class="tabs" role="tablist">
+    <button role="tab" aria-selected="true" data-tab="convert">Convert script · Табдили хат</button>
+    <button role="tab" aria-selected="false" data-tab="normalize">Normalize for speech · Барои нутқ</button>
+    <button role="tab" aria-selected="false" data-tab="number">Numbers · Рақамҳо</button>
+  </div>
+
+  <section class="panel" data-panel="convert">
+    <div class="row">
+      <label>Language
+        <select id="c-lang">
+          <option value="tg">Тоҷикӣ · Tajik</option>
+          <option value="uz">Oʻzbekcha · Uzbek</option>
+        </select>
+      </label>
+      <label>Convert to
+        <select id="c-to">
+          <option value="Arab">Perso-Arabic · خط فارسی</option>
+          <option value="Latn">Latin · Лотинӣ</option>
+          <option value="Cyrl">Cyrillic · Кириллӣ</option>
+        </select>
+      </label>
+    </div>
+    <textarea id="c-in" dir="auto" aria-label="Text to convert">Забони тоҷикӣ ширинтар аз шакар.</textarea>
+    <div id="c-out" class="out" dir="auto" aria-live="polite"></div>
+    <div class="examples" id="c-examples"></div>
+    <p class="note">Perso-Arabic → Tajik Cyrillic is experimental: Persian does not write short vowels.</p>
+  </section>
+
+  <section class="panel" data-panel="normalize" hidden>
+    <div class="row">
+      <label>Language
+        <select id="n-lang">
+          <option value="tg">Тоҷикӣ · Tajik</option>
+          <option value="fa">فارسی · Persian</option>
+          <option value="fa-AF">دری · Dari</option>
+          <option value="uz">Oʻzbekcha · Uzbek</option>
+        </select>
+      </label>
+    </div>
+    <textarea id="n-in" dir="auto" aria-label="Text to normalize">Нархи 25 $ аст, 12.03.2026, соати 14:30, 15% тахфиф.</textarea>
+    <div id="n-out" class="out" dir="auto" aria-live="polite"></div>
+    <div class="examples" id="n-examples"></div>
+  </section>
+
+  <section class="panel" data-panel="number" hidden>
+    <div class="row">
+      <label>Number <input id="m-in" type="number" value="2026" step="1"></label>
+      <label>Language
+        <select id="m-lang">
+          <option value="tg">Тоҷикӣ · Tajik</option>
+          <option value="fa">فارسی · Persian</option>
+          <option value="fa-AF">دری · Dari</option>
+          <option value="uz">Oʻzbekcha · Uzbek</option>
+        </select>
+      </label>
+      <label>Script
+        <select id="m-script">
+          <option value="">Default</option>
+          <option value="Cyrl">Cyrillic</option>
+          <option value="Latn">Latin</option>
+          <option value="Arab">Perso-Arabic</option>
+        </select>
+      </label>
+      <label class="check"><input id="m-ord" type="checkbox"> Ordinal</label>
+    </div>
+    <div id="m-out" class="out" dir="auto" aria-live="polite"></div>
+  </section>
+
+  <footer>
+    Found a wrong word or form? Please <a href="https://github.com/BAHROMTJ/nutq/issues/new">open an issue</a>
+    with the correct version — native speakers' corrections make this better for everyone.
+    Хато ёфтед? Шакли дурустро дар GitHub нависед.
+  </footer>
+</main>
+
+<script type="module">
+  import * as nutq from "./nutq/index.js";
+
+  const $ = (id) => document.getElementById(id);
+
+  function show(el, compute) {
+    let text;
+    try {
+      text = compute();
+      el.classList.remove("error");
+    } catch (err) {
+      text = err.message;
+      el.classList.add("error");
+    }
+    el.textContent = text;
+    const copy = document.createElement("button");
+    copy.className = "copy";
+    copy.textContent = "Copy";
+    copy.onclick = () => navigator.clipboard?.writeText(text);
+    if (!el.classList.contains("error") && text) el.prepend(copy);
+  }
+
+  const convert = () => show($("c-out"), () => nutq.convert($("c-in").value, $("c-lang").value, { to: $("c-to").value }));
+  const normalize = () => show($("n-out"), () => nutq.normalize($("n-in").value, $("n-lang").value));
+  const number = () => show($("m-out"), () => {
+    const raw = $("m-in").value.trim();
+    if (!/^-?\d+$/.test(raw)) return "";
+    const lang = $("m-lang").value;
+    let script = $("m-script").value || undefined;
+    if (script && !nutq.getLanguage(lang).scripts.includes(script)) script = undefined;
+    return nutq.numberToWords(BigInt(raw), lang, { ordinal: $("m-ord").checked, script });
+  });
+
+  // Uzbek has no Perso-Arabic script: keep the "convert to" choice valid.
+  function syncScripts() {
+    const scripts = nutq.getLanguage($("c-lang").value).scripts;
+    for (const option of $("c-to").options) option.disabled = !scripts.includes(option.value);
+    if ($("c-to").selectedOptions[0].disabled) $("c-to").value = scripts.find((s) => s !== nutq.detectScript($("c-in").value)) ?? scripts[0];
+  }
+
+  function examples(container, items, apply) {
+    for (const item of items) {
+      const button = document.createElement("button");
+      button.textContent = item[0];
+      button.dir = "auto";
+      button.onclick = () => apply(...item);
+      $(container).append(button);
+    }
+  }
+
+  examples("c-examples", [
+    ["Тоҷикистон дар Осиёи Марказӣ ҷойгир аст.", "tg", "Arab"],
+    ["Абӯабдуллоҳи Рӯдакӣ", "tg", "Latn"],
+    ["تاجیکستان، کتاب‌ها", "tg", "Cyrl"],
+    ["O'zbekiston, yo'l, ma'no", "uz", "Cyrl"],
+    ["Ўзбекистон Республикаси", "uz", "Latn"],
+  ], (text, lang, to) => {
+    $("c-in").value = text; $("c-lang").value = lang; syncScripts(); $("c-to").value = to; convert();
+  });
+
+  examples("n-examples", [
+    ["Телефон: +992 93 123 45 67, ҳарорат -5°C", "tg"],
+    ["۱۴۰۵/۰۱/۱۲، قیمت ۲۵ دلار، ۱۵٪ تخفیف", "fa"],
+    ["۱۴۰۳/۰۵/۲۸، ۱۰۰۰ ؋، ۲٫۵٪", "fa-AF"],
+    ["2026-yil 12-mart, narxi 12 500 so'm", "uz"],
+    ["1991 йил 31 августда", "uz"],
+  ], (text, lang) => { $("n-in").value = text; $("n-lang").value = lang; normalize(); });
+
+  $("c-in").addEventListener("input", convert);
+  $("c-lang").addEventListener("change", () => { syncScripts(); convert(); });
+  $("c-to").addEventListener("change", convert);
+  $("n-in").addEventListener("input", normalize);
+  $("n-lang").addEventListener("change", normalize);
+  for (const id of ["m-in", "m-lang", "m-script", "m-ord"]) $(id).addEventListener("input", number);
+
+  for (const tab of document.querySelectorAll("[data-tab]")) {
+    tab.addEventListener("click", () => {
+      for (const other of document.querySelectorAll("[data-tab]")) other.setAttribute("aria-selected", other === tab);
+      for (const panel of document.querySelectorAll("[data-panel]")) panel.hidden = panel.dataset.panel !== tab.dataset.tab;
+    });
+  }
+
+  syncScripts(); convert(); normalize(); number();
+</script>
+</body>
+</html>
