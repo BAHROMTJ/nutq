@@ -18,7 +18,7 @@ All tools are read-only and work offline.
 
 ## Install
 
-Requires Python 3.10+. With [uv](https://docs.astral.sh/uv/), there is nothing to install by hand.
+Requires Python 3.10+. Published on [PyPI](https://pypi.org/project/nutq-mcp/); with [uv](https://docs.astral.sh/uv/), there is nothing to install by hand.
 
 **Claude Code**
 

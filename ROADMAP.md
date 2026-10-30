@@ -32,9 +32,10 @@ The goal: become the standard open tool for script conversion and speech-ready t
 ## Beyond Python
 
 - [x] **JavaScript port** in [`js/`](js/): same API, word list generated from the same TSV, and it passes every test vector exported from the Python suite (`scripts/export_vectors.py`; CI checks the vectors stay in sync)
-- [ ] Publish the JS port to npm as `nutq` (name is free; needs the maintainer's OK and an npm account)
+- [x] Published to npm as [`@bahrom99/nutq`](https://www.npmjs.com/package/@bahrom99/nutq) (npm refused the plain name `nutq` as too close to `nuxt`)
 - [x] **MCP server** in [`mcp/`](mcp/) (`nutq-mcp`): `convert_script`, `normalize_text`, `number_to_words`, `clean_text`, `list_languages`
-- [ ] Publish `nutq-mcp` to PyPI (a second trusted publisher) and list it in MCP registries
+- [x] Published `nutq-mcp` to [PyPI](https://pypi.org/project/nutq-mcp/) (release tag `mcp-v*`)
+- [ ] List `nutq-mcp` in MCP registries
 - [x] **Hugging Face Space**: [bahrom99/nutq](https://huggingface.co/spaces/bahrom99/nutq), a static page in [`web/`](web/) that runs the JS port in the browser (free hosting); a Gradio version is in [`demo/`](demo/)
 - [ ] A "suggest a fix" button that collects corrections from native speakers
 - [ ] Integrations: a text-normalization front end for open TTS models (Piper, Coqui, MMS) for Tajik and Uzbek; a spaCy / Hugging Face `tokenizers` pre-normalizer.

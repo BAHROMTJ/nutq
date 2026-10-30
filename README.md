@@ -1,6 +1,6 @@
 # nutq
 
-[![PyPI](https://img.shields.io/pypi/v/nutq)](https://pypi.org/project/nutq/) [![CI](https://github.com/BAHROMTJ/nutq/actions/workflows/ci.yml/badge.svg)](https://github.com/BAHROMTJ/nutq/actions/workflows/ci.yml)
+[![PyPI](https://img.shields.io/pypi/v/nutq)](https://pypi.org/project/nutq/) [![npm](https://img.shields.io/npm/v/@bahrom99/nutq)](https://www.npmjs.com/package/@bahrom99/nutq) [![CI](https://github.com/BAHROMTJ/nutq/actions/workflows/ci.yml/badge.svg)](https://github.com/BAHROMTJ/nutq/actions/workflows/ci.yml)
 
 **Script conversion and text normalization for Tajik, Persian, Dari and Uzbek** — in pure Python, with no dependencies.
 
@@ -72,8 +72,8 @@ nutq languages
 
 | | Where | Status |
 |---|---|---|
-| **JavaScript / TypeScript** (Node 18+ and browsers, zero dependencies) | [`js/`](js/) | same API as Python (`numberToWords` in camelCase); passes every test vector from the Python suite; not yet on npm |
-| **MCP server** for Claude and other AI assistants | [`mcp/`](mcp/) | tools `convert_script`, `normalize_text`, `number_to_words`, `clean_text`, `list_languages`; not yet on PyPI |
+| **JavaScript / TypeScript** (Node 18+ and browsers, zero dependencies) | [`js/`](js/) · `npm install @bahrom99/nutq` | same API as Python (`numberToWords` in camelCase); passes every test vector from the Python suite |
+| **MCP server** for Claude and other AI assistants | [`mcp/`](mcp/) · `claude mcp add nutq -- uvx nutq-mcp` | tools `convert_script`, `normalize_text`, `number_to_words`, `clean_text`, `list_languages` |
 | **Web demo** — [try it online](https://huggingface.co/spaces/bahrom99/nutq) | [`web/`](web/) | static page that runs the JS port in your browser |
 | Gradio demo (needs a paid Hugging Face Space or runs locally) | [`demo/`](demo/) | `python demo/app.py` |
 
